@@ -1,0 +1,24 @@
+PODS:
+  - FMFormSubmitKit (0.1.0):
+    - Masonry
+  - Masonry (1.1.0)
+
+DEPENDENCIES:
+  - FMFormSubmitKit (from `../`)
+  - Masonry
+
+SPEC REPOS:
+  trunk:
+    - Masonry
+
+EXTERNAL SOURCES:
+  FMFormSubmitKit:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  FMFormSubmitKit: 04f965fe43962f2de563ea5c682cf65811767464
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+
+PODFILE CHECKSUM: 70d9d8c25fcda8a6a1e54a889624aa9ee872640b
+
+COCOAPODS: 1.9.0

@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '8.0'
+
+target 'FMFormSubmitKit_Example' do
+  pod 'FMFormSubmitKit', :path => '../'
+
+  target 'FMFormSubmitKit_Tests' do
+    inherit! :search_paths
+pod 'Masonry'
+    
+  end
+end
