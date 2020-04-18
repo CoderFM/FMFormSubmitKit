@@ -7,6 +7,7 @@
 //
 
 #import "FormListCellConfigure.h"
+#import "FormListUpImageConfigure.h"
 
 @interface FormListCellConfigure ()
 
@@ -41,6 +42,9 @@
         _FormListCellConfigureInstance.titleFont = [UIFont systemFontOfSize:Form_BaseSize(14)];
         _FormListCellConfigureInstance.TFTVFont = [UIFont systemFontOfSize:Form_BaseSize(14)];
         _FormListCellConfigureInstance.imageIntroFont = [UIFont systemFontOfSize:Form_BaseSize(12)];
+        
+        
+        _FormListCellConfigureInstance.currentConfigure = [FormListUpImageConfigure defaultConfigure];
         
     });
     return _FormListCellConfigureInstance;

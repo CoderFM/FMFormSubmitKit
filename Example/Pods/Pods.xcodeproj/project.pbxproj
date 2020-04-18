@@ -64,6 +64,10 @@
 		B25320E18BB8E60AA253F125E4E6502E /* MASViewConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = D12E9F350C1C8076BE92719B89951AD8 /* MASViewConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B4FA5DBA31046FED9E33566769B33C7B /* Masonry-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A85AE9E36F67A1B513CB8DA940771B4F /* Masonry-dummy.m */; };
 		B604D7556ADA8D3D34769865CA5CEA78 /* FormListBaseModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 77811D0B4B44DE1ABEF53369965ACA59 /* FormListBaseModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C34B80AD244ADBA70030C3D0 /* FormListUpImageConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = C34B80AB244ADBA70030C3D0 /* FormListUpImageConfigure.m */; };
+		C34B80AE244ADBA70030C3D0 /* FormListUpImageConfigure.h in Headers */ = {isa = PBXBuildFile; fileRef = C34B80AC244ADBA70030C3D0 /* FormListUpImageConfigure.h */; };
+		C34B80B1244AE9990030C3D0 /* FormListImageUpCellItemView.h in Headers */ = {isa = PBXBuildFile; fileRef = C34B80AF244AE9990030C3D0 /* FormListImageUpCellItemView.h */; };
+		C34B80B2244AE9990030C3D0 /* FormListImageUpCellItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = C34B80B0244AE9990030C3D0 /* FormListImageUpCellItemView.m */; };
 		C4AECC88660F0B32C115A4F28CB215ED /* FormListImageSelectModel.h in Headers */ = {isa = PBXBuildFile; fileRef = A39CEC44A489457047575BD98B9ECFDD /* FormListImageSelectModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C95CE9DDDB329D88AE6F0CCEFA2D55D1 /* View+MASShorthandAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 86765B456E483806C4E13D2DD50E40A4 /* View+MASShorthandAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D0852FD6368E7AD5A1766C258E538C6E /* Pods-FMFormSubmitKit_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2902988B072F38A1133231FFD10FCBE0 /* Pods-FMFormSubmitKit_Tests-dummy.m */; };
@@ -130,7 +134,7 @@
 		08381A8FB8962D61CAC3ED45AFC49BB9 /* FMFormSubmitKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "FMFormSubmitKit-Info.plist"; sourceTree = "<group>"; };
 		0E9EA120341ABC74AC92BF11DDB37916 /* Pods-FMFormSubmitKit_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-FMFormSubmitKit_Example.modulemap"; sourceTree = "<group>"; };
 		1EDA78FF230A4869D669D9454215A0D0 /* Pods-FMFormSubmitKit_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FMFormSubmitKit_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		1FFED36A657123030ABB700256D73F15 /* Masonry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Masonry.framework; path = Masonry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FFED36A657123030ABB700256D73F15 /* Masonry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Masonry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		20CC51D329DC3A3923A458D375BFE15B /* Pods-FMFormSubmitKit_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FMFormSubmitKit_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		22CC11F5FD748B3A0D54BCD15D62BE66 /* FormListTextCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FormListTextCell.h; sourceTree = "<group>"; };
 		2319BA3E493040B5C241B324FE409AC0 /* FormTextView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FormTextView.h; sourceTree = "<group>"; };
@@ -143,11 +147,11 @@
 		33E3F0D1446B0168B5E93FB9F631B325 /* Pods-FMFormSubmitKit_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-FMFormSubmitKit_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		342C4D9B5E1E36390E7AF01E35444998 /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "ViewController+MASAdditions.m"; path = "Masonry/ViewController+MASAdditions.m"; sourceTree = "<group>"; };
 		35BE3BBB7F7766E1FCBFEBB211668124 /* FormListConfigure.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FormListConfigure.h; path = FMFormSubmitKit/Classes/FormListConfigure.h; sourceTree = "<group>"; };
-		38A98911C497D56958481E561D68BF01 /* FMFormSubmitKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = FMFormSubmitKit.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		38A98911C497D56958481E561D68BF01 /* FMFormSubmitKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = FMFormSubmitKit.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		3E537C1F47DA8B06DA4A71E3D14F4DE4 /* Masonry.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Masonry.modulemap; sourceTree = "<group>"; };
 		3FFB37CA09C69D67CED9BCCDD930B21D /* FormListSelectCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FormListSelectCell.h; sourceTree = "<group>"; };
 		419A961AD957E23BAB6A998ED7623134 /* Masonry.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Masonry.release.xcconfig; sourceTree = "<group>"; };
-		424987532F37E2019AEBDC66EBC20F48 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		424987532F37E2019AEBDC66EBC20F48 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		470C5CD1265270E95A8A89443C727427 /* MASConstraintMaker.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASConstraintMaker.m; path = Masonry/MASConstraintMaker.m; sourceTree = "<group>"; };
 		486882541C58027D6A444FDB845225E7 /* Pods-FMFormSubmitKit_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FMFormSubmitKit_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		4AD89987EC7EAE20D7034EEF9935E7CC /* MASCompositeConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASCompositeConstraint.h; path = Masonry/MASCompositeConstraint.h; sourceTree = "<group>"; };
@@ -184,13 +188,13 @@
 		927FB31DD8F9E9E8F48E5B2EF4361AAC /* FormListImageUpModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FormListImageUpModel.h; sourceTree = "<group>"; };
 		98EC7537E66C2DCB56CC2AB09D20913D /* Pods-FMFormSubmitKit_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-FMFormSubmitKit_Example-umbrella.h"; sourceTree = "<group>"; };
 		9BAD806096CE427A57BF87B241C08A44 /* FMFormSubmitKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FMFormSubmitKit.h; path = FMFormSubmitKit/Classes/FMFormSubmitKit.h; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A11AC44960A283674AC6FF6955DC4BDC /* Pods-FMFormSubmitKit_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FMFormSubmitKit_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		A3244068BAFCB47A623BEA1E0308F6E6 /* FormListImageUpCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = FormListImageUpCell.m; sourceTree = "<group>"; };
 		A39CEC44A489457047575BD98B9ECFDD /* FormListImageSelectModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FormListImageSelectModel.h; sourceTree = "<group>"; };
 		A78D3443F105E00FC21FE5A357C8F716 /* MASViewAttribute.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASViewAttribute.h; path = Masonry/MASViewAttribute.h; sourceTree = "<group>"; };
 		A85AE9E36F67A1B513CB8DA940771B4F /* Masonry-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Masonry-dummy.m"; sourceTree = "<group>"; };
-		A8866D92E9DCC7F3E3CFC19D2BB7A3F2 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		A8866D92E9DCC7F3E3CFC19D2BB7A3F2 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		A8BCCE8C6C17F326AFEDF4357C62ADAF /* MASViewAttribute.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASViewAttribute.m; path = Masonry/MASViewAttribute.m; sourceTree = "<group>"; };
 		AA77E59821C7C9C496AC4D4715FF570E /* FormListSelectModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = FormListSelectModel.m; sourceTree = "<group>"; };
 		AC3D49577AD83BDAF02C812B6D78E8E8 /* Pods-FMFormSubmitKit_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FMFormSubmitKit_Example-Info.plist"; sourceTree = "<group>"; };
@@ -198,19 +202,23 @@
 		ADDD51C86784024C4E8780D95036BD8A /* FormListBaseCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = FormListBaseCell.m; sourceTree = "<group>"; };
 		AF4497913DB548AE2E03103D3A97F34F /* View+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "View+MASAdditions.m"; path = "Masonry/View+MASAdditions.m"; sourceTree = "<group>"; };
 		B28EC2F4C626ED77509645BE3805CB29 /* MASConstraintMaker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASConstraintMaker.h; path = Masonry/MASConstraintMaker.h; sourceTree = "<group>"; };
-		B47C702802650C0420F16E18956151E7 /* Pods_FMFormSubmitKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_FMFormSubmitKit_Example.framework; path = "Pods-FMFormSubmitKit_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B47C702802650C0420F16E18956151E7 /* Pods_FMFormSubmitKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FMFormSubmitKit_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4FD8C1C443FF174F613EC2B50A723A5 /* FormListSubmitView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FormListSubmitView.h; path = FMFormSubmitKit/Classes/FormListSubmitView.h; sourceTree = "<group>"; };
 		B5AAB50B26CECDEFDB4FF80FFFEAEA33 /* Pods-FMFormSubmitKit_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FMFormSubmitKit_Example-frameworks.sh"; sourceTree = "<group>"; };
 		BCE8ADD082EA5960BF6B8AC090680BD3 /* FMFormSubmitKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FMFormSubmitKit.release.xcconfig; sourceTree = "<group>"; };
 		BDB676D9D5D3AFD89D8DDCE3369D4BAC /* Masonry-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Masonry-prefix.pch"; sourceTree = "<group>"; };
-		C034651C3C5001215E2337CAE5AD645D /* FMFormSubmitKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FMFormSubmitKit.framework; path = FMFormSubmitKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C034651C3C5001215E2337CAE5AD645D /* FMFormSubmitKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FMFormSubmitKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C34B80AB244ADBA70030C3D0 /* FormListUpImageConfigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FormListUpImageConfigure.m; path = FMFormSubmitKit/Classes/FormListUpImageConfigure.m; sourceTree = "<group>"; };
+		C34B80AC244ADBA70030C3D0 /* FormListUpImageConfigure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FormListUpImageConfigure.h; path = FMFormSubmitKit/Classes/FormListUpImageConfigure.h; sourceTree = "<group>"; };
+		C34B80AF244AE9990030C3D0 /* FormListImageUpCellItemView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FormListImageUpCellItemView.h; sourceTree = "<group>"; };
+		C34B80B0244AE9990030C3D0 /* FormListImageUpCellItemView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FormListImageUpCellItemView.m; sourceTree = "<group>"; };
 		C626BE1CFB347BBECFBCEC4AFFF78CA2 /* FormListTitleCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FormListTitleCell.h; sourceTree = "<group>"; };
 		C663FFE10CAF881BAF1E421A00809D07 /* Pods-FMFormSubmitKit_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-FMFormSubmitKit_Tests-umbrella.h"; sourceTree = "<group>"; };
 		C7665E65121335CCA04F09F6354531FA /* FormListTextVCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = FormListTextVCell.m; sourceTree = "<group>"; };
 		D0DC6D7C938BBF6B1133C1BC592CB4DE /* UITextField+FormExtension.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UITextField+FormExtension.h"; sourceTree = "<group>"; };
 		D12E9F350C1C8076BE92719B89951AD8 /* MASViewConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASViewConstraint.h; path = Masonry/MASViewConstraint.h; sourceTree = "<group>"; };
 		D434960D5703BF85B86C06943E75794B /* UITextField+FormExtension.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UITextField+FormExtension.m"; sourceTree = "<group>"; };
-		D49FF36282F954AF88D3F1C30BA77373 /* Pods_FMFormSubmitKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_FMFormSubmitKit_Tests.framework; path = "Pods-FMFormSubmitKit_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D49FF36282F954AF88D3F1C30BA77373 /* Pods_FMFormSubmitKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FMFormSubmitKit_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7D59CAF952F1F7FAD98CE3D974A7D97 /* FMFormSubmitKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FMFormSubmitKit-umbrella.h"; sourceTree = "<group>"; };
 		DC4200B31D95EA3C5FA5D8FDA120045B /* FormListSelectModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FormListSelectModel.h; sourceTree = "<group>"; };
 		DFA1012B6A8BD076CD9F09831AE37A01 /* Masonry-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Masonry-Info.plist"; sourceTree = "<group>"; };
@@ -297,7 +305,6 @@
 				342C4D9B5E1E36390E7AF01E35444998 /* ViewController+MASAdditions.m */,
 				C84A449C2DE4F91F0620A5147DD42E0F /* Support Files */,
 			);
-			name = Masonry;
 			path = Masonry;
 			sourceTree = "<group>";
 		};
@@ -335,6 +342,8 @@
 				C7665E65121335CCA04F09F6354531FA /* FormListTextVCell.m */,
 				C626BE1CFB347BBECFBCEC4AFFF78CA2 /* FormListTitleCell.h */,
 				274D250220DCD084DEEC12F1497008DE /* FormListTitleCell.m */,
+				C34B80AF244AE9990030C3D0 /* FormListImageUpCellItemView.h */,
+				C34B80B0244AE9990030C3D0 /* FormListImageUpCellItemView.m */,
 				2319BA3E493040B5C241B324FE409AC0 /* FormTextView.h */,
 				E78563B9450DDC6AE77D3272073570FE /* FormTextView.m */,
 			);
@@ -437,9 +446,11 @@
 			isa = PBXGroup;
 			children = (
 				9BAD806096CE427A57BF87B241C08A44 /* FMFormSubmitKit.h */,
+				35BE3BBB7F7766E1FCBFEBB211668124 /* FormListConfigure.h */,
 				6874C346EB2371449ACDE799D9BB380C /* FormListCellConfigure.h */,
 				EE54A93906DE5C40F1B96350CE92C32B /* FormListCellConfigure.m */,
-				35BE3BBB7F7766E1FCBFEBB211668124 /* FormListConfigure.h */,
+				C34B80AC244ADBA70030C3D0 /* FormListUpImageConfigure.h */,
+				C34B80AB244ADBA70030C3D0 /* FormListUpImageConfigure.m */,
 				B4FD8C1C443FF174F613EC2B50A723A5 /* FormListSubmitView.h */,
 				8C7656EA9DC728B27A9499DCA8B6B2A9 /* FormListSubmitView.m */,
 				569B4B33CD188F64CB24D16CA5FBEC5C /* Model */,
@@ -563,7 +574,9 @@
 				D4CA0ED00DB567E24F719B0C1760443F /* FormListImageUpModel.h in Headers */,
 				F92EEA2753477CE6DE4C1BF3287A9F0F /* FormListSelectCell.h in Headers */,
 				65DDFC0FF60AE311558F7EE1B9FA868A /* FormListSelectModel.h in Headers */,
+				C34B80B1244AE9990030C3D0 /* FormListImageUpCellItemView.h in Headers */,
 				DC6A8303E5C54A1EB73EB4301C717F2B /* FormListSubmitView.h in Headers */,
+				C34B80AE244ADBA70030C3D0 /* FormListUpImageConfigure.h in Headers */,
 				26C4A66D5A3F0F42B7DCB55452ADB683 /* FormListTextCell.h in Headers */,
 				4319B65CBB52CED4D9E517F09BCE60A6 /* FormListTextModel.h in Headers */,
 				7ECED1228F93386E822DBA7C5BDF58E1 /* FormListTextVCell.h in Headers */,
@@ -733,7 +746,9 @@
 				A95DE92BD23908528F67E8011BB91C26 /* FormListBaseCell.m in Sources */,
 				3C3EB16537BA05DBAF5D73F85DAF6C61 /* FormListBaseModel.m in Sources */,
 				D0DCF6B68BF38FA6CA360E4FE7C17BAB /* FormListCellConfigure.m in Sources */,
+				C34B80AD244ADBA70030C3D0 /* FormListUpImageConfigure.m in Sources */,
 				16D6321B8E1F818298BC34C7BBD676E2 /* FormListImageSelectModel.m in Sources */,
+				C34B80B2244AE9990030C3D0 /* FormListImageUpCellItemView.m in Sources */,
 				D8434B72421D6203D867E68175D10F72 /* FormListImageUpCell.m in Sources */,
 				FF92AD6172C5034119ECF443AAD62102 /* FormListImageUpModel.m in Sources */,
 				374DE31410398601AF3F636C7CCDC80F /* FormListSelectCell.m in Sources */,
@@ -939,8 +954,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};

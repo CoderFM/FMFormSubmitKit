@@ -11,7 +11,7 @@
 #import "FormListConfigure.h"
 
 NS_ASSUME_NONNULL_BEGIN
-
+@class FormListUpImageConfigure;
 @interface FormListCellConfigure : NSObject
 
 @property(nonatomic, assign)CGFloat lrMargin;
@@ -21,11 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, assign)CGFloat textDefaultHeight;
 @property(nonatomic, assign)CGFloat tfLMagin;
 @property(nonatomic, assign)CGFloat textVDefaultHeight;
-//@property(nonatomic, assign)CGFloat imageSpace;
-//@property(nonatomic, assign)CGFloat imageLRMagin;
-//@property(nonatomic, assign)CGFloat imageHeight;
-//@property(nonatomic, assign)CGFloat imageWidth;
-//@property(nonatomic, assign)CGFloat imageIntroTopMargin;
+
 @property(nonatomic, assign)CGFloat cellArrowLMagin;
 
 @property(nonatomic, assign)CGFloat tvTitleTopMargin;
@@ -41,6 +37,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(nonatomic, strong)UIImage *selectNormalImage;
 @property(nonatomic, strong)UIImage *selectSelectedImage;
+
+@property(nonatomic, strong)FormListUpImageConfigure *currentConfigure;
 
 @property(nonatomic, copy)void(^verifyFailAlertBlock)(NSString *text);
 

@@ -9,14 +9,14 @@
 #import "FormListTitleModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
-@class FormListImageSelectModel;
+@class FormListImageSelectModel, FormListUpImageConfigure;
 @interface FormListImageUpModel : FormListTitleModel
-@property(nonatomic, copy)NSString *intro;
-@property(nonatomic, assign)BOOL isIntroMutibleLine;
 @property(nonatomic, assign)BOOL canDynamicAdd;
 @property(nonatomic, assign)NSInteger maxCount;
 @property(nonatomic, copy)void(^refreshBlock)(void);
 @property(nonatomic, strong)NSArray<FormListImageSelectModel *> *images;
+
+@property(nonatomic, strong)FormListUpImageConfigure *imageConfigure;
 
 @property(nonatomic, copy)void(^selectImageBlock)(FormListImageSelectModel *model, UIImage *image);
 

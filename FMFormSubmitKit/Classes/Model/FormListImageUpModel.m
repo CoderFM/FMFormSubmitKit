@@ -9,15 +9,32 @@
 #import "FormListImageUpModel.h"
 #import "FormListImageUpCell.h"
 #import "FormListImageSelectModel.h"
+#import "FormListUpImageConfigure.h"
+
+@interface FormListImageUpModel ()
+
+@property(nonatomic, assign)CGFloat interiorHeight;
+
+@end
 
 @implementation FormListImageUpModel
 - (CGFloat)cellHeight{
-    return 100;
+    return self.interiorHeight;
 }
+
+- (CGFloat)interiorHeight{
+    if (_interiorHeight == 0) {
+        NSInteger count = self.canDynamicAdd ? MIN(self.images.count, self.maxCount) : self.images.count;
+        _interiorHeight = [self.imageConfigure heightWithCount:count];
+    }
+    return _interiorHeight;
+}
+
 - (instancetype)init{
     if (self = [super init]) {
         self.reuseKey = NSStringFromClass([FormListImageUpCell class]);
         self.bottomLineHeight = 0.5;
+        self.imageConfigure = [FormListCellConfigure defaultConfigure].currentConfigure;
     }
     return self;
 }
@@ -30,7 +47,7 @@
     __block NSString *message = @"";
     __weak typeof(self) weakSelf = self;
     [self.images enumerateObjectsUsingBlock:^(FormListImageSelectModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        if (obj.imageId == nil && obj.imageId.length > 0) {
+        if (![obj verifySuccess]) {
             success = NO;
             message = [NSString stringWithFormat:@"%@ %@\n未上传", weakSelf.title, obj.title];
             *stop = YES;

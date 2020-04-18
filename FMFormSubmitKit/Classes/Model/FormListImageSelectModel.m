@@ -29,4 +29,8 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:FormSubmitModelValueChangeNotiKey object:self];
 }
 
+- (BOOL)verifySuccess{
+    return self.imageUrl && self.imageUrl.length > 0;
+}
+
 @end

@@ -7,7 +7,5 @@ target 'FMFormSubmitKit_Example' do
 
   target 'FMFormSubmitKit_Tests' do
     inherit! :search_paths
-pod 'Masonry'
-    
   end
 end

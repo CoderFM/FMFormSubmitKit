@@ -69,6 +69,13 @@
         model.selects = @[@"选择1", @"选择2"];
         [self.dataSource addObject:model];
     }
+    
+    {
+        FormListImageUpModel *model = [[FormListImageUpModel alloc] init];
+        model.images = @[@"1", @"1", @"1", @"1", ];
+        [self.dataSource addObject:model];
+    }
+    
     ///多种类型
     [self.tableView reloadData];
     

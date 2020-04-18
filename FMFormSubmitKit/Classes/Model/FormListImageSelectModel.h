@@ -16,8 +16,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, strong, nullable)UIImage *image;
 @property(nonatomic, strong, nullable)UIImage *placeholderImage;
 @property(nonatomic, copy)NSString *imageUrl; // 上传完图片保存的地址
-@property(nonatomic, copy)NSString *imageId; // 上传完图片id
+@property(nonatomic, strong)id otherData; // 其他数据
 + (instancetype)modelWithPlaceholderImageName:(NSString *)imageName;
+
+- (BOOL)verifySuccess;
+
 @end
 
 NS_ASSUME_NONNULL_END
