@@ -9,7 +9,7 @@
 #ifndef FormListConfigure_h
 #define FormListConfigure_h
 
-#import "Masonry.h"
+#import <Masonry/Masonry.h>
 #import "FormVerifyManager.h"
 #import "UITextField+FormExtension.h"
 #import "FormListCellConfigure.h"
