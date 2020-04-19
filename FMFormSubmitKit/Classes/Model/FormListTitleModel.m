@@ -17,6 +17,7 @@
         self.cellHeight = FormTextCellDefaultHeight;
         self.titleFont = FormCellTitleFont;
         self.titleColor = FormCellTitleColor;
+        self.titleAligment = NSTextAlignmentLeft;
     }
     return self;
 }
