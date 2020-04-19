@@ -60,11 +60,7 @@
 - (void)setModel:(FormListTextModel *)model{
     [super setModel:model];
     
-    self.titleLabel.font = model.titleFont;
     self.textF.font = model.textFont;
-    self.titleLabel.textColor = model.titleColor;
-    
-    self.titleLabel.text = model.title;
     self.textF.placeholder = model.placehoder;
     self.textF.text = model.text;
     self.textF.keyboardType = model.keyboardType;

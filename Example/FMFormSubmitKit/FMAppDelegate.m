@@ -8,6 +8,8 @@
 
 #import "FMAppDelegate.h"
 
+// pod trunk push FMFormSubmitKit.podspec --allow-warnings
+
 @implementation FMAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
