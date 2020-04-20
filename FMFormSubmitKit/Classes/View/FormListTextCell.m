@@ -60,6 +60,7 @@
 - (void)setModel:(FormListTextModel *)model{
     [super setModel:model];
     
+    self.textF.textColor = model.textColor;
     self.textF.font = model.textFont;
     self.textF.placeholder = model.placehoder;
     self.textF.text = model.text;
