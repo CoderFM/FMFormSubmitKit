@@ -38,6 +38,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, strong)UIImage *selectNormalImage;
 @property(nonatomic, strong)UIImage *selectSelectedImage;
 
+@property(nonatomic, strong)UIImage *eyeNormalImage;
+@property(nonatomic, strong)UIImage *eyeSelectedImage;
+
 @property(nonatomic, strong)FormListUpImageConfigure *currentConfigure;
 
 @property(nonatomic, copy)void(^verifyFailAlertBlock)(NSString *text);

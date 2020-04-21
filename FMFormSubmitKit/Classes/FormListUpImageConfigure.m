@@ -50,7 +50,7 @@
     con.imageWidth = 100;
     con.imageHeight = con.imageWidth;
     con.column = 2;
-    con.direction = FormListUpImageDirectionRTL;
+    con.direction = FormListUpImageDirectionLTR;
     return con;
 }
 

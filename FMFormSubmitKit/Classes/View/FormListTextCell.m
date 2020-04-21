@@ -43,13 +43,13 @@
         
         UIButton *eye = [[UIButton alloc] init];
         eye.hidden = YES;
-        [eye setImage:[UIImage imageNamed:@"login_eye_no"] forState:UIControlStateNormal];
-        [eye setImage:[UIImage imageNamed:@"login_eye_yes"] forState:UIControlStateSelected];
+        [eye setImage:FormEyeNormalImage forState:UIControlStateNormal];
+        [eye setImage:FormEyeCellSelectImage forState:UIControlStateSelected];
         [eye addTarget:self action:@selector(eyeClick:) forControlEvents:UIControlEventTouchUpInside];
         [self.contentView addSubview:eye];
         [eye mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.bottom.mas_equalTo(0);
-            make.right.mas_equalTo(-Form_BaseSize(15));
+            make.right.mas_equalTo(-FormTextCellTFLMagin);
             make.width.mas_equalTo(Form_BaseSize(30 + 16));
         }];
         self.eyeBtn = eye;
@@ -86,19 +86,27 @@
                 make.centerY.mas_equalTo(0);
             }];
             self.textF.rightView = view;
-        } else if ([model.rightC isKindOfClass:[NSString class]]) {
+        } else if ([model.rightC isKindOfClass:[NSString class]] || [model.rightC isKindOfClass:[NSAttributedString class]]) {
             UILabel *label = [[UILabel alloc] init];
-            label.text = model.rightC;
-            label.textColor = FormCellTitleColor;
-            label.font = self.textF.font;
             label.textAlignment = NSTextAlignmentRight;
+            CGFloat width;
+            if ([model.rightC isKindOfClass:[NSString class]]) {
+                width = [(NSString *)model.rightC boundingRectWithSize:CGSizeMake(MAXFLOAT, model.cellHeight) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:model.textFont} context:nil].size.width;
+                label.text = model.rightC;
+                label.textColor = model.textColor;
+                label.font = model.textFont;
+            } else {
+                width = [(NSAttributedString *)model.rightC boundingRectWithSize:CGSizeMake(MAXFLOAT, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin context:nil].size.width;
+                label.attributedText = model.rightC;
+            }
+            view.bounds = CGRectMake(0, 0, FormCellArrowLMagin + width, model.cellHeight);
             [view addSubview:label];
             [label mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.left.mas_equalTo(Form_BaseSize(8));
+                make.left.mas_equalTo(FormCellArrowLMagin);
                 make.right.mas_equalTo(0);
                 make.centerY.mas_equalTo(0);
             }];
-            self.textF.rightView = label;
+            self.textF.rightView = view;
         } else {
             self.textF.rightView = nil;
         }

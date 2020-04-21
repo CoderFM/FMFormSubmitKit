@@ -23,10 +23,8 @@
 }
 
 - (CGFloat)interiorHeight{
-    if (_interiorHeight == 0) {
-        NSInteger count = self.canDynamicAdd ? MIN(self.images.count, self.maxCount) : self.images.count;
-        _interiorHeight = [self.imageConfigure heightWithCount:count];
-    }
+    NSInteger count = self.canDynamicAdd ? (self.maxCount > 0 ? MIN(self.images.count, self.maxCount) : self.images.count) : self.images.count;
+    _interiorHeight = [self.imageConfigure heightWithCount:count] + self.bottomLineHeight;
     return _interiorHeight;
 }
 
@@ -35,6 +33,7 @@
         self.reuseKey = NSStringFromClass([FormListImageUpCell class]);
         self.bottomLineHeight = 0.5;
         self.imageConfigure = [FormListCellConfigure defaultConfigure].currentConfigure;
+        self.maxCount = NSIntegerMax;
     }
     return self;
 }

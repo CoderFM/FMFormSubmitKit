@@ -65,8 +65,8 @@
 		B4FA5DBA31046FED9E33566769B33C7B /* Masonry-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A85AE9E36F67A1B513CB8DA940771B4F /* Masonry-dummy.m */; };
 		B604D7556ADA8D3D34769865CA5CEA78 /* FormListBaseModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 77811D0B4B44DE1ABEF53369965ACA59 /* FormListBaseModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C34B80AD244ADBA70030C3D0 /* FormListUpImageConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = C34B80AB244ADBA70030C3D0 /* FormListUpImageConfigure.m */; };
-		C34B80AE244ADBA70030C3D0 /* FormListUpImageConfigure.h in Headers */ = {isa = PBXBuildFile; fileRef = C34B80AC244ADBA70030C3D0 /* FormListUpImageConfigure.h */; };
-		C34B80B1244AE9990030C3D0 /* FormListImageUpCellItemView.h in Headers */ = {isa = PBXBuildFile; fileRef = C34B80AF244AE9990030C3D0 /* FormListImageUpCellItemView.h */; };
+		C34B80AE244ADBA70030C3D0 /* FormListUpImageConfigure.h in Headers */ = {isa = PBXBuildFile; fileRef = C34B80AC244ADBA70030C3D0 /* FormListUpImageConfigure.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C34B80B1244AE9990030C3D0 /* FormListImageUpCellItemView.h in Headers */ = {isa = PBXBuildFile; fileRef = C34B80AF244AE9990030C3D0 /* FormListImageUpCellItemView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C34B80B2244AE9990030C3D0 /* FormListImageUpCellItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = C34B80B0244AE9990030C3D0 /* FormListImageUpCellItemView.m */; };
 		C4AECC88660F0B32C115A4F28CB215ED /* FormListImageSelectModel.h in Headers */ = {isa = PBXBuildFile; fileRef = A39CEC44A489457047575BD98B9ECFDD /* FormListImageSelectModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C95CE9DDDB329D88AE6F0CCEFA2D55D1 /* View+MASShorthandAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 86765B456E483806C4E13D2DD50E40A4 /* View+MASShorthandAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -564,6 +564,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				92649E3B8506331AADB21D60B69F5DC7 /* FMFormSubmitKit-umbrella.h in Headers */,
+				C34B80B1244AE9990030C3D0 /* FormListImageUpCellItemView.h in Headers */,
+				C34B80AE244ADBA70030C3D0 /* FormListUpImageConfigure.h in Headers */,
 				4C8117FB8C21FD3E5244B3517C007EAD /* FMFormSubmitKit.h in Headers */,
 				501182EB959DD8C4D2100979A1CF3B1D /* FormListBaseCell.h in Headers */,
 				B604D7556ADA8D3D34769865CA5CEA78 /* FormListBaseModel.h in Headers */,
@@ -574,9 +576,7 @@
 				D4CA0ED00DB567E24F719B0C1760443F /* FormListImageUpModel.h in Headers */,
 				F92EEA2753477CE6DE4C1BF3287A9F0F /* FormListSelectCell.h in Headers */,
 				65DDFC0FF60AE311558F7EE1B9FA868A /* FormListSelectModel.h in Headers */,
-				C34B80B1244AE9990030C3D0 /* FormListImageUpCellItemView.h in Headers */,
 				DC6A8303E5C54A1EB73EB4301C717F2B /* FormListSubmitView.h in Headers */,
-				C34B80AE244ADBA70030C3D0 /* FormListUpImageConfigure.h in Headers */,
 				26C4A66D5A3F0F42B7DCB55452ADB683 /* FormListTextCell.h in Headers */,
 				4319B65CBB52CED4D9E517F09BCE60A6 /* FormListTextModel.h in Headers */,
 				7ECED1228F93386E822DBA7C5BDF58E1 /* FormListTextVCell.h in Headers */,

@@ -32,7 +32,7 @@
             [view mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.bottom.equalTo(self.bottomLineView.mas_top);
                 make.left.right.equalTo(@0);
-                make.top.equalTo(self.contentView).offset(Form_BaseSize(10));
+                make.top.equalTo(self.contentView).offset(0);
             }];
         }
     }
@@ -46,7 +46,7 @@
     }];
     for (int i = 0; i < model.images.count; i++) {
         FormListImageSelectModel *btnModel = model.images[i];
-        FormListImageUpCellItemView *view = [[FormListImageUpCellItemView alloc] init];
+        FormListImageUpCellItemView *view = [[model.imageConfigure.imageViewClass alloc] init];
         view.model = btnModel;
         __weak typeof(self) weakSelf = self;
         [view setClickBlock:^(BOOL add, FormListImageSelectModel *model) {
@@ -58,7 +58,7 @@
                         if (index == upModel.images.count - 1) {
                             NSMutableArray *arrm = [NSMutableArray arrayWithArray:upModel.images];
                             FormListImageSelectModel *addModel = [[FormListImageSelectModel alloc] init];
-                            addModel.title = model.title;
+//                            addModel.title = model.title;
                             [arrm addObject:addModel];
                             upModel.images = [NSArray arrayWithArray:arrm];
                         }

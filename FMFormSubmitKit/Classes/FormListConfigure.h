@@ -39,15 +39,11 @@
 #define FormTextCellTFLMagin [FormListCellConfigure defaultConfigure].tfLMagin // 默认TF左边的边距
 #define FormTextVCellDefaultHeight [FormListCellConfigure defaultConfigure].textVDefaultHeight // 默认TVCell的高度
 
-//#define FormUpCellImageCloum 2 // 单行可以放几张图片
-//#define FormUpCellImageSpace Form_BaseSize(11) // 图片之前的间距
-//#define FormUpCellImageLRMagin Form_BaseSize(15) // 图片左边右边的间距
-//#define FormUpCellImageHeight Form_BaseSize(138) // 图片的高度
-//#define FormUpCellImageWidth Form_BaseSize(165) // 图片的宽度
-
 #define FormUpCellDefaultImage @"form_list_image_add" // 添加图片默认
 #define FormSelectCellNormalImage [FormListCellConfigure defaultConfigure].selectNormalImage
 #define FormSelectCellSelectImage [FormListCellConfigure defaultConfigure].selectSelectedImage
+#define FormEyeNormalImage [FormListCellConfigure defaultConfigure].eyeNormalImage
+#define FormEyeCellSelectImage [FormListCellConfigure defaultConfigure].eyeSelectedImage
 #define FormVerifyFailAlert(message) ![FormListCellConfigure defaultConfigure].verifyFailAlertBlock?:[FormListCellConfigure defaultConfigure].verifyFailAlertBlock(message) // 验证失败的提示
 
 #define FormSubmitDefaultValue @"" // 提交默认值
