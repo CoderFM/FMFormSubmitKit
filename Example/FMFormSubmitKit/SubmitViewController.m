@@ -86,7 +86,11 @@
     
     {
         FormListImageUpModel *model = [[FormListImageUpModel alloc] init];
-        model.images = @[@"1", @"2", @"3", @"4", ];
+        FormListImageSelectModel *selModel = [[FormListImageSelectModel alloc] init];
+        FormListImageSelectModel *selModel1 = [[FormListImageSelectModel alloc] init];
+        FormListImageSelectModel *selModel2 = [[FormListImageSelectModel alloc] init];
+        FormListImageSelectModel *selModel3 = [[FormListImageSelectModel alloc] init];
+            model.images = [@[selModel, selModel1, selModel2, selModel3, ] mutableCopy];
         model.imageConfigure.imageViewClass = [FMUpImageItemView class];
         model.canDynamicAdd = NO;
 //        model.maxCount = 8;
@@ -111,10 +115,14 @@
     }
     {
             FormListImageUpModel *model = [[FormListImageUpModel alloc] init];
-            model.images = @[@"1", @"2", @"3", @"4", ];
+        FormListImageSelectModel *selModel = [[FormListImageSelectModel alloc] init];
+        FormListImageSelectModel *selModel1 = [[FormListImageSelectModel alloc] init];
+        FormListImageSelectModel *selModel2 = [[FormListImageSelectModel alloc] init];
+        FormListImageSelectModel *selModel3 = [[FormListImageSelectModel alloc] init];
+            model.images = [@[selModel, selModel1, selModel2, selModel3, ] mutableCopy];
             model.imageConfigure.imageViewClass = [FMUpImageItemView class];
             model.canDynamicAdd = YES;
-    //        model.maxCount = 8;
+            model.maxCount = 8;
             [model setRefreshBlock:^{
                 [self.tableView reloadData];
             }];

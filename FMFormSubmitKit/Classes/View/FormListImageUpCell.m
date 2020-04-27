@@ -67,7 +67,11 @@
                 } else {
                     NSMutableArray *arrm = [NSMutableArray arrayWithArray:upModel.images];
                     [arrm removeObject:model];
-                    if (index == upModel.images.count - 1) {
+                    FormListImageSelectModel *lastModel = [arrm lastObject];
+                    if (lastModel.image != nil) {
+                        [arrm addObject:upModel.imageConfigure.createAddModel()];
+                    }
+                    if (arrm.count == 0) {
                         [arrm addObject:upModel.imageConfigure.createAddModel()];
                     }
                     upModel.images = [NSArray arrayWithArray:arrm];
