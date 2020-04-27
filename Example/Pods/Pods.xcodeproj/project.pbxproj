@@ -64,6 +64,8 @@
 		B25320E18BB8E60AA253F125E4E6502E /* MASViewConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = D12E9F350C1C8076BE92719B89951AD8 /* MASViewConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B4FA5DBA31046FED9E33566769B33C7B /* Masonry-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A85AE9E36F67A1B513CB8DA940771B4F /* Masonry-dummy.m */; };
 		B604D7556ADA8D3D34769865CA5CEA78 /* FormListBaseModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 77811D0B4B44DE1ABEF53369965ACA59 /* FormListBaseModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C334F5B72456C02E003E39FD /* UITextView+FormExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = C334F5B52456C02E003E39FD /* UITextView+FormExtension.h */; };
+		C334F5B82456C02E003E39FD /* UITextView+FormExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = C334F5B62456C02E003E39FD /* UITextView+FormExtension.m */; };
 		C34B80AD244ADBA70030C3D0 /* FormListUpImageConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = C34B80AB244ADBA70030C3D0 /* FormListUpImageConfigure.m */; };
 		C34B80AE244ADBA70030C3D0 /* FormListUpImageConfigure.h in Headers */ = {isa = PBXBuildFile; fileRef = C34B80AC244ADBA70030C3D0 /* FormListUpImageConfigure.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C34B80B1244AE9990030C3D0 /* FormListImageUpCellItemView.h in Headers */ = {isa = PBXBuildFile; fileRef = C34B80AF244AE9990030C3D0 /* FormListImageUpCellItemView.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -208,6 +210,8 @@
 		BCE8ADD082EA5960BF6B8AC090680BD3 /* FMFormSubmitKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FMFormSubmitKit.release.xcconfig; sourceTree = "<group>"; };
 		BDB676D9D5D3AFD89D8DDCE3369D4BAC /* Masonry-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Masonry-prefix.pch"; sourceTree = "<group>"; };
 		C034651C3C5001215E2337CAE5AD645D /* FMFormSubmitKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FMFormSubmitKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C334F5B52456C02E003E39FD /* UITextView+FormExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextView+FormExtension.h"; sourceTree = "<group>"; };
+		C334F5B62456C02E003E39FD /* UITextView+FormExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextView+FormExtension.m"; sourceTree = "<group>"; };
 		C34B80AB244ADBA70030C3D0 /* FormListUpImageConfigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FormListUpImageConfigure.m; path = FMFormSubmitKit/Classes/FormListUpImageConfigure.m; sourceTree = "<group>"; };
 		C34B80AC244ADBA70030C3D0 /* FormListUpImageConfigure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FormListUpImageConfigure.h; path = FMFormSubmitKit/Classes/FormListUpImageConfigure.h; sourceTree = "<group>"; };
 		C34B80AF244AE9990030C3D0 /* FormListImageUpCellItemView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FormListImageUpCellItemView.h; sourceTree = "<group>"; };
@@ -414,6 +418,8 @@
 				2EE14BAD92B1F65A1CE4BEFB3BD6C5F3 /* FormVerifyManager.m */,
 				D0DC6D7C938BBF6B1133C1BC592CB4DE /* UITextField+FormExtension.h */,
 				D434960D5703BF85B86C06943E75794B /* UITextField+FormExtension.m */,
+				C334F5B52456C02E003E39FD /* UITextView+FormExtension.h */,
+				C334F5B62456C02E003E39FD /* UITextView+FormExtension.m */,
 			);
 			name = Tool;
 			path = FMFormSubmitKit/Classes/Tool;
@@ -582,6 +588,7 @@
 				7ECED1228F93386E822DBA7C5BDF58E1 /* FormListTextVCell.h in Headers */,
 				5BD1343891942E7E1575E6C93D3B4C2A /* FormListTitleCell.h in Headers */,
 				8FB0E53A41E0596E45F3E50D3AA87E09 /* FormListTitleModel.h in Headers */,
+				C334F5B72456C02E003E39FD /* UITextView+FormExtension.h in Headers */,
 				EA5759D0A24E8F176E0907E291CB432E /* FormTextView.h in Headers */,
 				1AA6B9DC79C13E1A83C06A941BDBDE75 /* FormVerifyManager.h in Headers */,
 				09276FEFDA9F4F5A0A7C4170E7EE63A9 /* UITextField+FormExtension.h in Headers */,
@@ -758,6 +765,7 @@
 				42B590F711198D88FC6E817849832AAF /* FormListTextModel.m in Sources */,
 				49B52DD8D912B8B535F28EB0CA0521E6 /* FormListTextVCell.m in Sources */,
 				0360631F5EAA5B4919E283EDDE3F885F /* FormListTitleCell.m in Sources */,
+				C334F5B82456C02E003E39FD /* UITextView+FormExtension.m in Sources */,
 				91256EEC36AEBF0BCB31001FCA4C024A /* FormListTitleModel.m in Sources */,
 				24BF701868BEB86C679AF992CCC4E3B6 /* FormTextView.m in Sources */,
 				1A4B230D66E1E42A264A9EE43AF17D7E /* FormVerifyManager.m in Sources */,

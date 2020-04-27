@@ -63,6 +63,9 @@
         model.textFLeftMargin = FormCellLRMargin;
         model.alignment = NSTextAlignmentLeft;
         model.eyeEnable = YES;
+        [model setTextLengthChange:^(NSInteger length) {
+            
+        }];
         [self.dataSource addObject:model];
     }
     {
@@ -89,6 +92,20 @@
 //        model.maxCount = 8;
         [model setRefreshBlock:^{
             [self.tableView reloadData];
+        }];
+        [self.dataSource addObject:model];
+    }
+    {
+        FormListTextModel *model = [FormListTextModel modelWithTVPlaceholder:@"请输入文章内容" title:@""];
+        model.alignment = NSTextAlignmentLeft;
+        model.cellHeight = 300;
+        model.textFLeftMargin = 15;
+        model.textVTopMargin = 5;
+//        model.isSelect = YES;
+        model.limitCount = 10;
+        model.inputPredicate = FormVerifyOnlyLetter;
+        [model setTextLengthChange:^(NSInteger length) {
+            
         }];
         [self.dataSource addObject:model];
     }

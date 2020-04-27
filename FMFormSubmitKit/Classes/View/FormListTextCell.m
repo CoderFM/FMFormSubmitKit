@@ -139,6 +139,10 @@
             }
         }
     }
+    
+    if (model.textLengthChange) {
+        model.textLengthChange(self.textF.text.length);
+    }
 }
 
 

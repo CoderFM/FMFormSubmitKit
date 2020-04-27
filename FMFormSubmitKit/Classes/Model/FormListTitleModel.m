@@ -7,6 +7,7 @@
 //
 
 #import "FormListTitleModel.h"
+#import "FormListTitleCell.h"
 
 @implementation FormListTitleModel
 
@@ -18,6 +19,7 @@
         self.titleFont = FormCellTitleFont;
         self.titleColor = FormCellTitleColor;
         self.titleAligment = NSTextAlignmentLeft;
+        self.reuseKey = NSStringFromClass([FormListTitleCell class]);
     }
     return self;
 }

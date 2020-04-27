@@ -38,8 +38,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(nonatomic, copy)BOOL(^verifyBlock)(NSString *text);
 
-@property(nonatomic, copy)void(^selectBlock)(UITextField *tf, FormListTextModel *model);
-@property(nonatomic, copy)void(^configurationBlock)(UITextField *tf);
+@property(nonatomic, copy)void(^selectBlock)(id tftv, FormListTextModel *model);
+@property(nonatomic, copy)void(^configurationBlock)(id tftv);
+
+@property(nonatomic, copy)void(^textLengthChange)(NSInteger length);
 
 + (instancetype)modelWithPlaceholder:(NSString *)placeholder keyboardType:(UIKeyboardType)type hasRight:(BOOL)hasRight righrContent:(id _Nullable)rightContent title:(NSString *)title;
 
