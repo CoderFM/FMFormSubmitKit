@@ -57,9 +57,7 @@
                     if (upModel.images.count < upModel.maxCount) {// 可以再添加
                         if (index == upModel.images.count - 1) {
                             NSMutableArray *arrm = [NSMutableArray arrayWithArray:upModel.images];
-                            FormListImageSelectModel *addModel = [[FormListImageSelectModel alloc] init];
-//                            addModel.title = model.title;
-                            [arrm addObject:addModel];
+                            [arrm addObject:upModel.imageConfigure.createAddModel()];
                             upModel.images = [NSArray arrayWithArray:arrm];
                         }
                     }
@@ -70,9 +68,7 @@
                     NSMutableArray *arrm = [NSMutableArray arrayWithArray:upModel.images];
                     [arrm removeObject:model];
                     if (index == upModel.images.count - 1) {
-                        FormListImageSelectModel *addModel = [[FormListImageSelectModel alloc] init];
-                        addModel.title = model.title;
-                        [arrm addObject:addModel];
+                        [arrm addObject:upModel.imageConfigure.createAddModel()];
                     }
                     upModel.images = [NSArray arrayWithArray:arrm];
                 }

@@ -7,6 +7,7 @@
 
 #import "FormListUpImageConfigure.h"
 #import <Masonry/Masonry.h>
+#import "FormListImageSelectModel.h"
 
 @interface FormListUpImageConfigure ()
 
@@ -35,10 +36,36 @@
                 maker.height.mas_equalTo(weakSelf.imageHeight);
             };
         } else {
-            NSLog(@"上传图片的宽度给的有误   请重新计算");
+            _masony_makeBlock = ^(MASConstraintMaker * _Nonnull maker, NSInteger index){
+                NSInteger currentIndex = index;
+                NSInteger currentLine = 0;
+                CGFloat left;
+                CGFloat top = weakSelf.inset.top + currentLine * weakSelf.imageHeight + (currentLine == 0 ? 0 : currentLine * weakSelf.imageLineSpace);
+                if (weakSelf.direction == FormListUpImageDirectionLTR) {
+                    left = weakSelf.inset.left + currentIndex * weakSelf.imageWidth + (currentIndex == 0 ? 0 : currentIndex * weakSelf.imageItemSpace);
+                } else {
+                    left = weakSelf.totalWidth - weakSelf.inset.right - (currentIndex + 1) * weakSelf.imageWidth - currentIndex * weakSelf.imageItemSpace;
+                }
+                maker.left.mas_equalTo(left);
+                maker.top.mas_equalTo(top);
+                maker.width.mas_equalTo(weakSelf.imageWidth);
+                maker.height.mas_equalTo(weakSelf.imageHeight);
+            };
         }
     }
     return _masony_makeBlock;
+}
+
+- (FormListImageSelectModel *_Nonnull (^)(void))createAddModel{
+    if (_createAddModel == nil) {
+        __weak typeof(self) weakSelf = self;
+        _createAddModel = ^{
+            FormListImageSelectModel *model = [[FormListImageSelectModel alloc] init];
+            model.placeholderImage = weakSelf.placeholderImage;
+            return model;
+        };
+    }
+    return _createAddModel;
 }
 
 + (instancetype)defaultConfigure{

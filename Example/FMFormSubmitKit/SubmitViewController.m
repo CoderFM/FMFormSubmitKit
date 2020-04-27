@@ -92,7 +92,17 @@
         }];
         [self.dataSource addObject:model];
     }
-    
+    {
+            FormListImageUpModel *model = [[FormListImageUpModel alloc] init];
+            model.images = @[@"1", @"2", @"3", @"4", ];
+            model.imageConfigure.imageViewClass = [FMUpImageItemView class];
+            model.canDynamicAdd = YES;
+    //        model.maxCount = 8;
+            [model setRefreshBlock:^{
+                [self.tableView reloadData];
+            }];
+            [self.dataSource addObject:model];
+        }
     ///多种类型
     [self.tableView reloadData];
     

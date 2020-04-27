@@ -25,6 +25,8 @@
         self.bottomLineLRMargin = FormCellLRMargin;
         self.bottomLineHeight = FormCellBottomLineDefaultHeight;
         self.reuseKey = @"FormListBaseCell";
+        self.contentBg = [UIColor whiteColor];
+        self.bottomLineBg = FormCellBottomLineColor;
     }
     return self;
 }

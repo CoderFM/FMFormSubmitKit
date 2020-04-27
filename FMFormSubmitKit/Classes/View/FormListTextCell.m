@@ -49,8 +49,7 @@
         [self.contentView addSubview:eye];
         [eye mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.bottom.mas_equalTo(0);
-            make.right.mas_equalTo(-FormTextCellTFLMagin);
-            make.width.mas_equalTo(Form_BaseSize(30 + 16));
+            make.right.mas_equalTo(tf);
         }];
         self.eyeBtn = eye;
     }
@@ -66,11 +65,8 @@
     self.textF.text = model.text;
     self.textF.keyboardType = model.keyboardType;
     self.textF.textAlignment = model.alignment;
-    [self.textF mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.textF mas_updateConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(model.textFLeftMargin);
-    }];
-    [self.bottomLineView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.height.mas_equalTo(model.bottomLineHeight);
     }];
     
     if (model.hasRight && model.rightC) {

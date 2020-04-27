@@ -18,6 +18,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, assign)CGFloat bottomLineHeight;
 @property(nonatomic, assign)CGFloat bottomLineLRMargin;
 
+@property(nonatomic, strong)UIColor *contentBg;
+@property(nonatomic, strong)UIColor *bottomLineBg;
+
 @property(nonatomic, strong, readonly)id submitValue;
 @property(nonatomic, copy)id(^submitValueBlock)(FormListBaseModel *model);
 

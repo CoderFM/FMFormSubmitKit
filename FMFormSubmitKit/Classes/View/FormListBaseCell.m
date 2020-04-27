@@ -31,6 +31,7 @@
 
 - (void)setModel:(FormListBaseModel *)model{
     _model = model;
+    self.contentView.backgroundColor = model.contentBg;
     [self.bottomLineView mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.height.mas_equalTo(model.bottomLineHeight);
         make.left.mas_equalTo(model.bottomLineLRMargin);

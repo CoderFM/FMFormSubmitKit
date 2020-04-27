@@ -15,7 +15,7 @@ typedef enum : NSUInteger {
     FormListUpImageDirectionRTL
 } FormListUpImageDirection;
 
-@class MASConstraintMaker;
+@class MASConstraintMaker, FormListImageSelectModel;
 @interface FormListUpImageConfigure : NSObject
 
 @property(nonatomic, assign)FormListUpImageDirection direction;
@@ -26,11 +26,13 @@ typedef enum : NSUInteger {
 @property(nonatomic, assign)CGFloat imageHeight;
 @property(nonatomic, assign)CGFloat imageWidth;
 
+@property(nonatomic, strong)UIImage *placeholderImage;
+
 @property(nonatomic, assign)NSInteger column;
 
 @property(nonatomic, strong)Class imageViewClass;///需要继承自FormListImageUpCellItemView 或者自定义并遵守FormListImageUpCellItemDelegate
 @property(nonatomic, copy)void(^masony_makeBlock)(MASConstraintMaker *make, NSInteger index);
-
+@property(nonatomic, copy)FormListImageSelectModel *(^createAddModel)(void);
 + (instancetype)defaultConfigure;
 
 - (CGFloat)heightWithCount:(NSInteger)count;
