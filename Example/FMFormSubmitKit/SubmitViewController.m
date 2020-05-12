@@ -48,12 +48,13 @@
         [self.dataSource addObject:model];
     }
     {
-        FormListTextModel *model = [FormListTextModel modelWithPlaceholder:@"请输入" keyboardType:UIKeyboardTypeDefault hasRight:NO righrContent:nil title:@""];
+        FormListTextModel *model = [FormListTextModel modelWithPlaceholder:@"请输入(支持emoji表情输入)" keyboardType:UIKeyboardTypeDefault hasRight:NO righrContent:nil title:@""];
         model.textFLeftMargin = FormCellLRMargin;
+        model.supportEmoji = YES;
         [self.dataSource addObject:model];
     }
     {
-        FormListTextModel *model = [FormListTextModel modelWithPlaceholder:@"请输入" keyboardType:UIKeyboardTypeDefault hasRight:NO righrContent:nil title:@""];
+        FormListTextModel *model = [FormListTextModel modelWithPlaceholder:@"请输入(不支持emoji表情输入)" keyboardType:UIKeyboardTypeDefault hasRight:NO righrContent:nil title:@""];
         model.textFLeftMargin = FormCellLRMargin;
         model.alignment = NSTextAlignmentLeft;
         [self.dataSource addObject:model];

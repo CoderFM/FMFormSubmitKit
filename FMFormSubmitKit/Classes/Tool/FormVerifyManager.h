@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-///无符号的正则表达式
+///字符数字中文下划线中划线
 #define FormVerifyUnsigned @"[A-Za-z0-9_\-\u4e00-\u9fa5]+"
 ///手机号匹配
 #define FormVerifyMobile @"0?(13|14|15|16|18|17|19)[0-9]{9}"

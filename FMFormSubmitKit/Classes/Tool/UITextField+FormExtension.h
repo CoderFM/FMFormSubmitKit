@@ -13,6 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (BOOL)isChineseInput;
 
+- (BOOL)isEmojiInput;
+
 - (void)matchWithPattern:(NSString *)pattern;
 
 - (BOOL)hasInputPinYin;

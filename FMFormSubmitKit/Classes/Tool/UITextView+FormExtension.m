@@ -18,6 +18,10 @@
     }
 }
 
+- (BOOL)isEmojiInput{
+    return [[[self textInputMode] primaryLanguage] isEqualToString:@"emoji"];
+}
+
 - (void)matchWithPattern:(NSString *)pattern{
     if (![self hasInputPinYin] && pattern && pattern.length > 0) {
         NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:[pattern stringByReplacingOccurrencesOfString:@"[" withString:@"[^"] options:NSRegularExpressionCaseInsensitive error:nil];

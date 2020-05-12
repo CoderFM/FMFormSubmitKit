@@ -32,7 +32,7 @@
 }
 
 + (instancetype)modelWithTitle:(NSString *)title{
-    FormListSelectModel *model = [[FormListSelectModel alloc] init];
+    FormListSelectModel *model = [[self alloc] init];
     model.title = title;
     return model;
 }

@@ -11,7 +11,7 @@
 @implementation FormListBaseModel
 
 + (instancetype)modelWithCellHeight:(CGFloat)cellHeight bottomLineHeight:(CGFloat)bottomLineHeight bottomLineLRMargin:(CGFloat)bottomLineLRMargin{
-    FormListBaseModel *model = [[FormListBaseModel alloc] init];
+    FormListBaseModel *model = [[self alloc] init];
     model.cellHeight = cellHeight;
     model.bottomLineHeight = bottomLineHeight;
     model.bottomLineLRMargin = bottomLineLRMargin;

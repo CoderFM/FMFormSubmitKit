@@ -11,6 +11,8 @@
 #import "FormListTextModel.h"
 #import "UITextView+FormExtension.h"
 
+#import "NSString+FormEmoji.h"
+
 @interface FormListTextVCell ()<UITextViewDelegate>
 @property(nonatomic, weak)FormTextView *textV;
 @end
@@ -84,6 +86,9 @@
     if (textView.isChineseInput) {
         return YES;
     }
+    if (!model.supportEmoji && textView.isEmojiInput) {
+        return NO;
+    }
     if (model.inputPredicate && text.length > 0) {
         return [text verifyPredicate:model.inputPredicate];
     } else {
@@ -96,6 +101,10 @@
     
     if (self.textV.isChineseInput) {
         [self.textV matchWithPattern:model.inputPredicate];
+    }
+    
+    if (!model.supportEmoji) {
+        self.textV.text = [self.textV.text removeEmoji];
     }
     
     model.text = self.textV.text;

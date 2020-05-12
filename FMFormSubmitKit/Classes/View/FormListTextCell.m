@@ -10,6 +10,8 @@
 #import "FormListTextModel.h"
 #import "FormListConfigure.h"
 
+#import "NSString+FormEmoji.h"
+
 @interface FormListTextCell()<UITextFieldDelegate>
 @property(nonatomic, weak)UITextField *textF;
 @property(nonatomic, weak)UIButton *eyeBtn;
@@ -126,6 +128,10 @@
         [self.textF matchWithPattern:model.inputPredicate];
     }
     
+    if (!model.supportEmoji) {
+        self.textF.text = [self.textF.text removeEmoji];
+    }
+    
     model.text = self.textF.text;
     if (!model.isSelect) {
         model.value = model.text;
@@ -159,6 +165,9 @@
     FormListTextModel *model = (FormListTextModel *)self.model;
     if (textField.isChineseInput) {
         return YES;
+    }
+    if (!model.supportEmoji && textField.isEmojiInput) {
+        return NO;
     }
     if (model.inputPredicate && string.length > 0) {
         return [string verifyPredicate:model.inputPredicate];
