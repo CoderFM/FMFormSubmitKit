@@ -57,6 +57,9 @@
         FormListTextModel *model = [FormListTextModel modelWithPlaceholder:@"请输入(不支持emoji表情输入)" keyboardType:UIKeyboardTypeDefault hasRight:NO righrContent:nil title:@""];
         model.textFLeftMargin = FormCellLRMargin;
         model.alignment = NSTextAlignmentLeft;
+        model.inputPredicate = FormVerifyOnlyChinese;
+        model.supportEmoji = YES;
+        model.limitCount = 55;
         [self.dataSource addObject:model];
     }
     {

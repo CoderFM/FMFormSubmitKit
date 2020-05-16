@@ -83,11 +83,11 @@
 
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text{
     FormListTextModel *model = (FormListTextModel *)self.model;
-    if (textView.isChineseInput) {
-        return YES;
-    }
     if (!model.supportEmoji && textView.isEmojiInput) {
         return NO;
+    }
+    if (textView.isChineseInput) {
+        return YES;
     }
     if (model.inputPredicate && text.length > 0) {
         return [text verifyPredicate:model.inputPredicate];
@@ -99,12 +99,12 @@
 - (void)textViewDidChange:(UITextView *)textView{
     FormListTextModel *model = (FormListTextModel *)self.model;
     
-    if (self.textV.isChineseInput) {
-        [self.textV matchWithPattern:model.inputPredicate];
-    }
-    
     if (!model.supportEmoji) {
         self.textV.text = [self.textV.text removeEmoji];
+    }
+    
+    if (self.textV.isChineseInput) {
+        [self.textV matchWithPattern:model.inputPredicate];
     }
     
     model.text = self.textV.text;

@@ -124,12 +124,12 @@
 - (void)textFieldTextDidChange:(NSNotification *)noti{
     FormListTextModel *model = (FormListTextModel *)self.model;
     
-    if (self.textF.isChineseInput) {
-        [self.textF matchWithPattern:model.inputPredicate];
-    }
-    
     if (!model.supportEmoji) {
         self.textF.text = [self.textF.text removeEmoji];
+    }
+    
+    if (self.textF.isChineseInput) {
+        [self.textF matchWithPattern:model.inputPredicate];
     }
     
     model.text = self.textF.text;
@@ -163,11 +163,11 @@
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
     FormListTextModel *model = (FormListTextModel *)self.model;
-    if (textField.isChineseInput) {
-        return YES;
-    }
     if (!model.supportEmoji && textField.isEmojiInput) {
         return NO;
+    }
+    if (textField.isChineseInput) {
+        return YES;
     }
     if (model.inputPredicate && string.length > 0) {
         return [string verifyPredicate:model.inputPredicate];
