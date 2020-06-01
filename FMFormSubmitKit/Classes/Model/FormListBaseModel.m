@@ -10,6 +10,13 @@
 
 @implementation FormListBaseModel
 
+- (NSString *)reuseKey{
+    if (_reuseKey == nil) {
+        _reuseKey = self.cellClassName;
+    }
+    return _reuseKey;
+}
+
 + (instancetype)modelWithCellHeight:(CGFloat)cellHeight bottomLineHeight:(CGFloat)bottomLineHeight bottomLineLRMargin:(CGFloat)bottomLineLRMargin{
     FormListBaseModel *model = [[self alloc] init];
     model.cellHeight = cellHeight;
@@ -24,11 +31,17 @@
     if (self) {
         self.bottomLineLRMargin = FormCellLRMargin;
         self.bottomLineHeight = FormCellBottomLineDefaultHeight;
-        self.reuseKey = @"FormListBaseCell";
+        self.cellClassName = @"FormListBaseCell";
         self.contentBg = [UIColor whiteColor];
         self.bottomLineBg = FormCellBottomLineColor;
     }
     return self;
+}
+
+- (void)setBottomLineLRMargin:(CGFloat)bottomLineLRMargin{
+    _bottomLineLRMargin = bottomLineLRMargin;
+    self.bottomLineRMargin = bottomLineLRMargin;
+    self.bottomLineLMargin = bottomLineLRMargin;
 }
 
 - (BOOL)verifySuccess:(BOOL)alert{

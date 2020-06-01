@@ -23,6 +23,10 @@
     [FormListCellConfigure defaultConfigure].selectSelectedImage = [UIImage imageNamed:@"base_choose_yes"];
     [FormListCellConfigure defaultConfigure].eyeNormalImage = [UIImage imageNamed:@"login_eye_no"];
     [FormListCellConfigure defaultConfigure].eyeSelectedImage = [UIImage imageNamed:@"login_eye_yes"];
+    
+    [FormListCellConfigure defaultConfigure].inputDecimalCount = 4;
+    
+    [self addData];
 }
 
 - (void)addData{
@@ -32,6 +36,8 @@
     }
     {
         FormListBaseModel *model = [FormListBaseModel modelWithCellHeight:10 bottomLineHeight:5 bottomLineLRMargin:10];
+        model.bottomLineBMargin = 2;
+        model.bottomLineLMargin = 50;
         [self.dataSource addObject:model];
     }
     {
@@ -50,7 +56,6 @@
     {
         FormListTextModel *model = [FormListTextModel modelWithPlaceholder:@"请输入(支持emoji表情输入)" keyboardType:UIKeyboardTypeDefault hasRight:NO righrContent:nil title:@""];
         model.textFLeftMargin = FormCellLRMargin;
-        model.supportEmoji = YES;
         [self.dataSource addObject:model];
     }
     {
@@ -58,7 +63,6 @@
         model.textFLeftMargin = FormCellLRMargin;
         model.alignment = NSTextAlignmentLeft;
         model.inputPredicate = FormVerifyOnlyChinese;
-        model.supportEmoji = YES;
         model.limitCount = 55;
         [self.dataSource addObject:model];
     }
@@ -73,7 +77,29 @@
         [self.dataSource addObject:model];
     }
     {
-        FormListTextModel *model = [FormListTextModel modelWithPlaceholder:@"请选择" keyboardType:UIKeyboardTypeDefault hasRight:YES righrContent:[UIImage imageNamed:@"mine_arrow_right_black"] title:@""];
+        FormListTextModel *model = [FormListTextModel modelWithPlaceholder:@"请输入小数" keyboardType:UIKeyboardTypeDefault hasRight:YES righrContent:[UIImage imageNamed:@"mine_arrow_right_black"] title:@""];
+        model.inputPredicate = FormVerifyOnlyDecimal;
+        model.textFLeftMargin = FormCellLRMargin;
+        model.alignment = NSTextAlignmentLeft;
+        [self.dataSource addObject:model];
+    }
+    {
+        FormListTextModel *model = [FormListTextModel modelWithPlaceholder:@"请输入纯中文" keyboardType:UIKeyboardTypeDefault hasRight:YES righrContent:[UIImage imageNamed:@"mine_arrow_right_black"] title:@""];
+        model.inputPredicate = FormVerifyOnlyChinese;
+        model.textFLeftMargin = FormCellLRMargin;
+        model.alignment = NSTextAlignmentLeft;
+        [self.dataSource addObject:model];
+    }
+    {
+        FormListTextModel *model = [FormListTextModel modelWithPlaceholder:@"请输入纯英文" keyboardType:UIKeyboardTypeDefault hasRight:YES righrContent:[UIImage imageNamed:@"mine_arrow_right_black"] title:@""];
+        model.inputPredicate = FormVerifyOnlyLetter;
+        model.textFLeftMargin = FormCellLRMargin;
+        model.alignment = NSTextAlignmentLeft;
+        [self.dataSource addObject:model];
+    }
+    {
+        FormListTextModel *model = [FormListTextModel modelWithPlaceholder:@"请输入纯数字" keyboardType:UIKeyboardTypeDefault hasRight:YES righrContent:[UIImage imageNamed:@"mine_arrow_right_black"] title:@""];
+        model.inputPredicate = FormVerifyOnlyNumber;
         model.textFLeftMargin = FormCellLRMargin;
         model.alignment = NSTextAlignmentLeft;
         [self.dataSource addObject:model];
@@ -133,9 +159,9 @@
             [self.dataSource addObject:model];
         }
     ///多种类型
+    
     [self.tableView reloadData];
     
 }
-
 
 @end

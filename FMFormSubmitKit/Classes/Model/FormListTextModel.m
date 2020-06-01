@@ -10,17 +10,24 @@
 #import "FormListTextCell.h"
 #import "FormListTextVCell.h"
 
+@interface FormListTextModel ()
+
+@property(nonatomic, assign)BOOL supportEmoji;
+
+@end
+
 @implementation FormListTextModel
 
 - (instancetype)init{
     if (self = [super init]) {
         self.cellHeight = FormTextCellDefaultHeight;
         self.textFLeftMargin = FormTextCellTFLMagin;
-        self.reuseKey = NSStringFromClass([FormListTextCell class]);
+        self.cellClassName = NSStringFromClass([FormListTextCell class]);
         self.alignment = NSTextAlignmentRight;
         self.titleFont = FormCellTitleFont;
         self.textFont = FormCellTFTVFont;
         self.titleColor = FormCellTitleColor;
+        self.supportEmoji = YES;
     }
     return self;
 }
@@ -40,7 +47,7 @@
     model.title = title;
     model.placehoder = placeholder;
     model.cellHeight = FormTextVCellDefaultHeight;
-    model.reuseKey = NSStringFromClass([FormListTextVCell class]);
+    model.cellClassName = NSStringFromClass([FormListTextVCell class]);
     return model;
 }
 

@@ -30,7 +30,7 @@
 
 - (instancetype)init{
     if (self = [super init]) {
-        self.reuseKey = NSStringFromClass([FormListImageUpCell class]);
+        self.cellClassName = NSStringFromClass([FormListImageUpCell class]);
         self.bottomLineHeight = 0.5;
         self.imageConfigure = [FormListCellConfigure defaultConfigure].currentConfigure;
         self.maxCount = NSIntegerMax;

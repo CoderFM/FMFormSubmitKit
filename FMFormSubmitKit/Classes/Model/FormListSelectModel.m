@@ -14,7 +14,7 @@
 
 - (instancetype)init{
     if (self = [super init]) {
-        self.reuseKey = NSStringFromClass([FormListSelectCell class]);
+        self.cellClassName = NSStringFromClass([FormListSelectCell class]);
         self.cellHeight = FormTextCellDefaultHeight;
     }
     return self;

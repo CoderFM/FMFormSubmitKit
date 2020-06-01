@@ -20,17 +20,15 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         _FormListCellConfigureInstance = [[FormListCellConfigure alloc] init];
+        
+        _FormListCellConfigureInstance.inputDecimalCount = 2;
+        
         _FormListCellConfigureInstance.lrMargin = Form_BaseSize(25);
         _FormListCellConfigureInstance.arrowLMagin = Form_BaseSize(8);
         _FormListCellConfigureInstance.bottomLineDefaultHeight = 0.5;
         _FormListCellConfigureInstance.textDefaultHeight = Form_BaseSize(46);
         _FormListCellConfigureInstance.tfLMagin = Form_BaseSize(82);
         _FormListCellConfigureInstance.textVDefaultHeight = Form_BaseSize(130);
-//        _FormListCellConfigureInstance.imageSpace = Form_BaseSize(11);
-//        _FormListCellConfigureInstance.imageLRMagin = Form_BaseSize(12);
-//        _FormListCellConfigureInstance.imageHeight = Form_BaseSize(120);
-//        _FormListCellConfigureInstance.imageWidth = Form_BaseSize(170);
-//        _FormListCellConfigureInstance.imageIntroTopMargin = Form_BaseSize(8);
         
         _FormListCellConfigureInstance.bottomLineColor = FormUIColorFromRGB(0xf2f4f5);
         _FormListCellConfigureInstance.titleColor = FormUIColorFromRGB(0x333333);

@@ -32,7 +32,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, assign)BOOL eyeEnable;
 @property(nonatomic, assign)BOOL isSecret;
 
-@property(nonatomic, assign)BOOL supportEmoji;
 @property(nonatomic, copy)NSString *verifyPredicate;
 @property(nonatomic, copy)NSString *inputPredicate;
 @property(nonatomic, assign)NSInteger limitCount;

@@ -14,6 +14,9 @@ NS_ASSUME_NONNULL_BEGIN
 @class FormListUpImageConfigure;
 @interface FormListCellConfigure : NSObject
 
+///支持的小数位数
+@property(nonatomic, assign)NSInteger inputDecimalCount;
+
 @property(nonatomic, assign)CGFloat lrMargin;
 @property(nonatomic, assign)CGFloat arrowLMagin;
 @property(nonatomic, assign)CGFloat bottomLineDefaultHeight;

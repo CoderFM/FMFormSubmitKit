@@ -19,7 +19,7 @@
         self.titleFont = FormCellTitleFont;
         self.titleColor = FormCellTitleColor;
         self.titleAligment = NSTextAlignmentLeft;
-        self.reuseKey = NSStringFromClass([FormListTitleCell class]);
+        self.cellClassName = NSStringFromClass([FormListTitleCell class]);
     }
     return self;
 }

@@ -30,7 +30,6 @@
         self.separatorStyle = UITableViewCellSeparatorStyleNone;
         self.dataSource = self;
         self.delegate = self;
-        [self registerCell];
     }
     return self;
 }
@@ -52,17 +51,20 @@
 
 
 - (void)reloadData{
+    [self registerCell];
     [super reloadData];
     [[NSNotificationCenter defaultCenter] postNotificationName:FormSubmitModelValueChangeNotiKey object:nil];
 }
 
 - (void)registerCell
 {
-    [self registerClass:[FormListBaseCell class] forCellReuseIdentifier:NSStringFromClass([FormListBaseCell class])];
-    [self registerClass:[FormListTextCell class] forCellReuseIdentifier:NSStringFromClass([FormListTextCell class])];
-    [self registerClass:[FormListTextVCell class] forCellReuseIdentifier:NSStringFromClass([FormListTextVCell class])];
-    [self registerClass:[FormListImageUpCell class] forCellReuseIdentifier:NSStringFromClass([FormListImageUpCell class])];
-    [self registerClass:[FormListSelectCell class] forCellReuseIdentifier:NSStringFromClass([FormListSelectCell class])];
+    for (FormListBaseModel *model in self.models) {
+        if (model.cellIsNib) {
+            [self registerNib:[UINib nibWithNibName:model.cellClassName bundle:nil] forCellReuseIdentifier:model.reuseKey];
+        } else {
+            [self registerClass:NSClassFromString(model.cellClassName) forCellReuseIdentifier:model.reuseKey];
+        }
+    }
 }
 
 #pragma mark --- tableView delegate / dataSource ---

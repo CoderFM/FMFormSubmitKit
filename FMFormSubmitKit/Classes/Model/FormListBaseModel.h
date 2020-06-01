@@ -15,8 +15,14 @@ NS_ASSUME_NONNULL_BEGIN
 @interface FormListBaseModel : NSObject
 @property(nonatomic, assign)CGFloat cellHeight;
 @property(nonatomic, copy)NSString *reuseKey;
+@property(nonatomic, copy)NSString *cellClassName;
+@property(nonatomic, assign)BOOL cellIsNib;
 @property(nonatomic, assign)CGFloat bottomLineHeight;
 @property(nonatomic, assign)CGFloat bottomLineLRMargin;
+@property(nonatomic, assign)CGFloat bottomLineLMargin;
+@property(nonatomic, assign)CGFloat bottomLineRMargin;
+///底部距离  给正值往上顶
+@property(nonatomic, assign)CGFloat bottomLineBMargin;
 
 @property(nonatomic, strong)UIColor *contentBg;
 @property(nonatomic, strong)UIColor *bottomLineBg;

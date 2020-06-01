@@ -29,7 +29,8 @@ NS_ASSUME_NONNULL_BEGIN
 #define FormVerifyPassword @"^(?![0-9]+$)(?![a-zA-Z]+$)[a-zA-Z0-9]{6,20}"
 ///小数
 #define FormVerifyDecimal @"(([0]|(0[.]\\d{0,2}))|([1-9]\\d{0,8}(([.]\\d{0,2})?)))?"
-
+/// 只能输入带2位小数的数值
+#define FormVerifyOnlyDecimal @"[0-9.]+"
 
 @interface NSString (FormVerifyManager)
 

@@ -124,8 +124,35 @@
 - (void)textFieldTextDidChange:(NSNotification *)noti{
     FormListTextModel *model = (FormListTextModel *)self.model;
     
-    if (!model.supportEmoji) {
-        self.textF.text = [self.textF.text removeEmoji];
+    if (model.inputPredicate && [model.inputPredicate isEqualToString:FormVerifyOnlyDecimal]) {
+        if ([self.textF.text containsString:@"."]) {
+            NSArray *texts = [self.textF.text componentsSeparatedByString:@"."];
+            NSString *begin = [texts firstObject];
+            if ([begin integerValue] == 0) {
+                begin = @"0";
+            } else {
+                begin = [NSString stringWithFormat:@"%ld", [begin integerValue]];
+            }
+            if (texts.count > 1) {
+                NSString *last = texts[1];
+                if (last.length > [FormListCellConfigure defaultConfigure].inputDecimalCount) {
+                    last = [last substringToIndex:[FormListCellConfigure defaultConfigure].inputDecimalCount];
+                }
+                self.textF.text = [@[begin, last] componentsJoinedByString:@"."];
+            } else {
+                self.textF.text = [NSString stringWithFormat:@"%@.", begin];
+            }
+        } else {
+            NSString *begin = self.textF.text;
+            if (begin.length > 0) {
+                if ([begin integerValue] == 0) {
+                    begin = @"0";
+                } else {
+                    begin = [NSString stringWithFormat:@"%ld", [begin integerValue]];
+                }
+                self.textF.text = begin;
+            }
+        }
     }
     
     if (self.textF.isChineseInput) {
@@ -163,9 +190,9 @@
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
     FormListTextModel *model = (FormListTextModel *)self.model;
-    if (!model.supportEmoji && textField.isEmojiInput) {
-        return NO;
-    }
+//    if (!model.supportEmoji && textField.isEmojiInput) {
+//        return NO;
+//    }
     if (textField.isChineseInput) {
         return YES;
     }
