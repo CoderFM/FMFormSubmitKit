@@ -39,8 +39,8 @@
         make.right.mas_equalTo(-model.bottomLineRMargin);
         make.bottom.mas_equalTo(-model.bottomLineBMargin);
     }];
-    if (model.congigureCell) {
-        model.congigureCell(self);
+    if (model.configureCell) {
+        model.configureCell(self);
     }
 }
 
