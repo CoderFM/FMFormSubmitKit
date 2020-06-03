@@ -10,9 +10,11 @@
 
 #import "FormListConfigure.h"
 #import "FormListTextModel.h"
+#import "FormListTitleModel.h"
 #import "FormListImageUpModel.h"
 #import "FormListSelectModel.h"
 #import "FormListImageSelectModel.h"
+
 #import "FormListSubmitView.h"
 
 #import "FormVerifyManager.h"

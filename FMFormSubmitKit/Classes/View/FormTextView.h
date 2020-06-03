@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface FormTextView : UITextView
 
+@property(nonatomic, strong) UILabel *placeholderLabel;
+
 @property(nullable, nonatomic,copy) IBInspectable NSString    *placeholder;
 
 @property(nullable, nonatomic,copy) IBInspectable NSAttributedString    *attributedPlaceholder;

@@ -13,8 +13,7 @@
 #import "NSString+FormEmoji.h"
 
 @interface FormListTextCell()<UITextFieldDelegate>
-@property(nonatomic, weak)UITextField *textF;
-@property(nonatomic, weak)UIButton *eyeBtn;
+
 @end
 
 @implementation FormListTextCell

@@ -11,8 +11,6 @@
 
 @interface FormListSelectCell ()
 
-@property(nonatomic, weak)UIView *btnView;
-@property(nonatomic, weak)UIButton *selectBtn;
 @end
 
 @implementation FormListSelectCell

@@ -10,8 +10,6 @@
 
 @interface FormTextView ()
 
-@property(nonatomic, strong) UILabel *placeholderLabel;
-
 @end
 
 @implementation FormTextView

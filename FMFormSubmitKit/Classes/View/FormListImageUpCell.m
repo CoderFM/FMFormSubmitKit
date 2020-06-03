@@ -15,8 +15,6 @@
 
 @interface FormListImageUpCell ()
 
-@property(nonatomic, weak)UIButton *currentClickBtn;
-
 @end
 
 @implementation FormListImageUpCell

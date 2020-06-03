@@ -14,7 +14,7 @@
 #import "NSString+FormEmoji.h"
 
 @interface FormListTextVCell ()<UITextViewDelegate>
-@property(nonatomic, weak)FormTextView *textV;
+
 @end
 
 @implementation FormListTextVCell

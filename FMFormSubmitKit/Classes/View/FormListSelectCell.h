@@ -11,6 +11,10 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface FormListSelectCell : FormListTitleCell
+
+@property(nonatomic, weak)UIView *btnView;
+@property(nonatomic, weak)UIButton *selectBtn;
+
 @end
 
 NS_ASSUME_NONNULL_END

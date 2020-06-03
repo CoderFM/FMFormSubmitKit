@@ -27,6 +27,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, strong)UIColor *contentBg;
 @property(nonatomic, strong)UIColor *bottomLineBg;
 
+@property(nonatomic, copy)void(^congigureCell)(id cell);
+
 @property(nonatomic, strong, readonly)id submitValue;
 @property(nonatomic, copy)id(^submitValueBlock)(FormListBaseModel *model);
 

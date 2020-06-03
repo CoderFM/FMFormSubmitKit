@@ -10,6 +10,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 @interface FormListTextCell : FormListTitleCell
+@property(nonatomic, weak)UITextField *textF;
+@property(nonatomic, weak)UIButton *eyeBtn;
 @end
 
 NS_ASSUME_NONNULL_END

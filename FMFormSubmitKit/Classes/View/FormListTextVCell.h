@@ -9,7 +9,9 @@
 #import "FormListTitleCell.h"
 
 NS_ASSUME_NONNULL_BEGIN
+@class FormTextView;
 @interface FormListTextVCell : FormListTitleCell
+@property(nonatomic, weak)FormTextView *textV;
 @end
 
 NS_ASSUME_NONNULL_END
