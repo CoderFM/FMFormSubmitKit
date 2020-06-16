@@ -38,6 +38,12 @@
     return self;
 }
 
+- (void)setLineHeight:(CGFloat)lineHeight leftMargin:(CGFloat)leftMargin rightMargin:(CGFloat)rightMargin{
+    self.bottomLineHeight = lineHeight;
+    self.bottomLineLMargin = leftMargin;
+    self.bottomLineRMargin = rightMargin;
+}
+
 - (void)setBottomLineLRMargin:(CGFloat)bottomLineLRMargin{
     _bottomLineLRMargin = bottomLineLRMargin;
     self.bottomLineRMargin = bottomLineLRMargin;
@@ -46,13 +52,6 @@
 
 - (BOOL)verifySuccess:(BOOL)alert{
     return YES;
-}
-
-- (id)submitValue{
-    if (self.submitValueBlock) {
-        return self.submitValueBlock(self);
-    }
-    return FormSubmitDefaultValue;
 }
 
 @end

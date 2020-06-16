@@ -51,6 +51,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)reloadTVHeight;
 
+- (void)setTextStyle:(NSTextAlignment)aligment textFont:( UIFont * _Nullable )textFont textColor:(UIColor *_Nullable)textColor;
+- (void)setInputLimit:(NSString *)inputPredicate count:(NSInteger)count;
 @end
 
 @interface FormListBaseModel (ConvertText)

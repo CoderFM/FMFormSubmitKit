@@ -20,6 +20,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(nonatomic, copy)void(^selectImageBlock)(FormListImageSelectModel *model, UIImage *image);
 
++ (instancetype)modelWithCongigure:(FormListUpImageConfigure *)configure images:(NSArray<FormListImageSelectModel *> *)images;
++ (instancetype)modelDynamicAddWithCongigure:(FormListUpImageConfigure *)configure maxCount:(NSInteger)maxCount;
+
 @end
 
 @interface FormListBaseModel (ConvertImage)

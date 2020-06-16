@@ -18,6 +18,24 @@
 @end
 
 @implementation FormListImageUpModel
+
++ (instancetype)modelWithCongigure:(FormListUpImageConfigure *)configure images:(NSArray<FormListImageSelectModel *> *)images{
+    FormListImageUpModel *model = [[self alloc] init];
+    model.imageConfigure = configure;
+    model.images = images;
+    return model;
+}
++ (instancetype)modelDynamicAddWithCongigure:(FormListUpImageConfigure *)configure maxCount:(NSInteger)maxCount{
+    FormListImageUpModel *model = [[self alloc] init];
+    model.imageConfigure = configure;
+    model.canDynamicAdd = YES;
+    model.maxCount = maxCount;
+    FormListImageSelectModel *selModel = [[FormListImageSelectModel alloc] init];
+    selModel.placeholderImage = configure.placeholderImage;
+    model.images = @[selModel];
+    return model;
+}
+
 - (CGFloat)cellHeight{
     return self.interiorHeight;
 }
@@ -58,17 +76,27 @@
     return success;
 }
 
-- (id)submitValue{
+- (NSDictionary *)submitValue{
     if (self.submitValueBlock) {
         return self.submitValueBlock(self);
     }
-    NSMutableArray *arrM = [NSMutableArray array];
-    [self.images enumerateObjectsUsingBlock:^(FormListImageSelectModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        if (obj.imageUrl) {
-            [arrM addObject:obj.imageUrl];
-        }
-    }];
-    return arrM;
+    if (self.submitKey) {
+        NSMutableArray *arrM = [NSMutableArray array];
+        [self.images enumerateObjectsUsingBlock:^(FormListImageSelectModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            if (obj.imageUrl) {
+                [arrM addObject:obj.imageUrl];
+            }
+        }];
+        return @{self.submitKey:[arrM componentsJoinedByString:@"|"]};
+    } else {
+        NSMutableDictionary *result = [NSMutableDictionary dictionary];
+        [self.images enumerateObjectsUsingBlock:^(FormListImageSelectModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            if (obj.imageUrl && obj.submitKey) {
+                [result setValue:obj.imageUrl forKey:obj.submitKey];
+            }
+        }];
+        return result;
+    }
 }
 
 @end

@@ -65,6 +65,21 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:FormSubmitModelValueChangeNotiKey object:self];
 }
 
+- (void)setTextStyle:(NSTextAlignment)aligment textFont:( UIFont * _Nullable )textFont textColor:(UIColor *_Nullable)textColor{
+    self.alignment = aligment;
+    if (textColor) {
+        self.textColor = textColor;
+    }
+    if (textFont) {
+        self.textFont = textFont;
+    }
+}
+
+- (void)setInputLimit:(NSString *)inputPredicate count:(NSInteger)count{
+    self.inputPredicate = inputPredicate;
+    self.limitCount = count;
+}
+
 - (void)reloadTVHeight{
     CGFloat textH = [self.text boundingRectWithSize:CGSizeMake(Form_SCREEN_WIDTH - self.textFLeftMargin - FormCellLRMargin, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:FormCellTFTVFont} context:nil].size.height;
     CGFloat lineH = FormCellTFTVFont.lineHeight;
@@ -93,11 +108,14 @@
     return success;
 }
 
-- (id)submitValue{
+- (NSDictionary *)submitValue{
     if (self.submitValueBlock) {
         return self.submitValueBlock(self);
     }
-    return self.value;
+    if (self.submitKey && self.text) {
+        return @{self.submitKey:self.text};
+    }
+    return nil;
 }
 
 @end

@@ -69,7 +69,7 @@
 }
 
 + (instancetype)defaultConfigure{
-    FormListUpImageConfigure *con = [[FormListUpImageConfigure alloc] init];
+    FormListUpImageConfigure *con = [[self alloc] init];
     con.totalWidth = [UIScreen mainScreen].bounds.size.width;
     con.inset = UIEdgeInsetsMake(10, 10, 10, 10);
     con.imageItemSpace = 10;
@@ -78,6 +78,18 @@
     con.imageHeight = con.imageWidth;
     con.column = 2;
     con.direction = FormListUpImageDirectionLTR;
+    return con;
+}
+
++ (instancetype)configureWithInset:(UIEdgeInsets)inset lineSpace:(CGFloat)lineSpace itemSpace:(CGFloat)itemSpace imageSize:(CGSize)imageSize column:(NSInteger)column{
+    FormListUpImageConfigure *con = [[self alloc] init];
+    con.totalWidth = [UIScreen mainScreen].bounds.size.width;
+    con.inset = inset;
+    con.imageLineSpace = lineSpace;
+    con.imageItemSpace = itemSpace;
+    con.imageWidth = imageSize.width;
+    con.imageHeight = imageSize.height;
+    con.column = column;
     return con;
 }
 

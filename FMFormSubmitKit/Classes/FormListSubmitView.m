@@ -18,6 +18,17 @@
 
 @implementation FormListSubmitView
 
+- (NSMutableDictionary *)submitParam{
+    NSMutableDictionary *result = [NSMutableDictionary dictionary];
+    for (FormListBaseModel *obj in self.models) {
+        NSDictionary *submit = obj.submitValue;
+        if (submit) {
+            [result addEntriesFromDictionary:submit];
+        }
+    }
+    return result;
+}
+
 - (NSMutableArray<FormListBaseModel *> *)models{
     if (_models == nil) {
         _models = [NSMutableArray array];
@@ -40,6 +51,7 @@
 
 - (BOOL)verifyDataSource:(BOOL)alert{
     __block BOOL success = YES;
+    [self.submitParam removeAllObjects];
     [self.models enumerateObjectsUsingBlock:^(FormListBaseModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         if (![obj verifySuccess:alert]) {
             success = NO;

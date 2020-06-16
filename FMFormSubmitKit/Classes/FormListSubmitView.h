@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface FormListSubmitView : UITableView
 
 @property (nonatomic, strong)NSMutableArray<FormListBaseModel *> *models;
-
+@property(nonatomic, strong, readonly)NSMutableDictionary *submitParam;
 - (BOOL)verifyDataSource;
 - (BOOL)verifyDataSource:(BOOL)alert;
 

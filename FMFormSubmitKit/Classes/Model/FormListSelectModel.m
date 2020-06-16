@@ -24,11 +24,14 @@
     return YES;
 }
 
-- (id)submitValue{
+- (NSDictionary *)submitValue{
     if (self.submitValueBlock) {
         return self.submitValueBlock(self);
     }
-    return @(self.selectIndex);
+    if (!self.submitKey) {
+        return nil;
+    }
+    return @{self.submitKey:@(self.selectIndex)};
 }
 
 + (instancetype)modelWithTitle:(NSString *)title{

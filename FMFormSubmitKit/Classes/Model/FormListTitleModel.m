@@ -24,4 +24,10 @@
     return self;
 }
 
++ (instancetype)modelWithTitle:(id)title{
+    FormListTitleModel *model = [[self alloc] init];
+    model.title = title;
+    return model;
+}
+
 @end

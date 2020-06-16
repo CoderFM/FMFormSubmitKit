@@ -22,6 +22,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(nonatomic, copy)void(^masony_remakeBlock)(MASConstraintMaker *make);
 
++ (instancetype)modelWithTitle:(id)title;
+
 @end
 
 NS_ASSUME_NONNULL_END

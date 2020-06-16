@@ -12,6 +12,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface FormListImageSelectModel : NSObject
+@property(nonatomic, copy)NSString *submitKey;
 @property(nonatomic, copy)NSString *title;
 @property(nonatomic, strong, nullable)UIImage *image;
 @property(nonatomic, strong, nullable)UIImage *placeholderImage;

@@ -27,7 +27,7 @@
     self.tableView.models = dataSource;
 }
 
-- (UITableView *)tableView{
+- (FormListSubmitView *)tableView{
     if (_tableView == nil) {
         FormListSubmitView *table = [[FormListSubmitView alloc] initWithFrame:CGRectZero style:self.tableStyle];
         [self.view addSubview:table];

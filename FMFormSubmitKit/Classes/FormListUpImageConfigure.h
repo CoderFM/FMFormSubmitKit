@@ -34,7 +34,7 @@ typedef enum : NSUInteger {
 @property(nonatomic, copy)void(^masony_makeBlock)(MASConstraintMaker *make, NSInteger index);
 @property(nonatomic, copy)FormListImageSelectModel *(^createAddModel)(void);
 + (instancetype)defaultConfigure;
-
++ (instancetype)configureWithInset:(UIEdgeInsets)inset lineSpace:(CGFloat)lineSpace itemSpace:(CGFloat)itemSpace imageSize:(CGSize)imageSize column:(NSInteger)column;
 - (CGFloat)heightWithCount:(NSInteger)count;
 
 @end
