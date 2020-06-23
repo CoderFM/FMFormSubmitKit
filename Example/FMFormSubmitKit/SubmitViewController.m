@@ -10,6 +10,8 @@
 #import "FMUpImageItemView.h"
 #import <FormListUpImageConfigure.h>
 
+#import <AudioToolbox/AudioToolbox.h>
+
 @interface SubmitViewController ()
 
 @end
@@ -32,6 +34,8 @@
 
 - (void)submitClick{
     NSLog(@"%@", self.tableView.submitParam);
+//    AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
+    AudioServicesPlaySystemSound(1519);
 }
 
 - (void)addData{
@@ -113,6 +117,10 @@
     }
     {
         FormListTextModel *model = [FormListTextModel modelWithPlaceholder:@"请选择" keyboardType:UIKeyboardTypeDefault hasRight:YES righrContent:[UIImage imageNamed:@"mine_arrow_right_black"] title:@"选择"];
+        model.isSelect = YES;
+        [model setSelectBlock:^(id  _Nonnull tftv, FormListTextModel * _Nonnull model) {
+            
+        }];
         [self.dataSource addObject:model];
     }
     {

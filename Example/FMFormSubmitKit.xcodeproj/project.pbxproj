@@ -25,6 +25,7 @@
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		C34B80A3244AA9030030C3D0 /* SubmitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C34B80A1244AA9030030C3D0 /* SubmitViewController.m */; };
 		C34B80A4244AA9030030C3D0 /* FormListSubmitVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C34B80A2244AA9030030C3D0 /* FormListSubmitVC.m */; };
+		C37E3FF324A095FF0013F2F8 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C37E3FF224A095FF0013F2F8 /* AudioToolbox.framework */; };
 		C3B480C8244E79C300423E7A /* FMUpImageItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B480C7244E79C300423E7A /* FMUpImageItemView.m */; };
 		DFDEDB86EF677D60DE13DA52 /* Pods_FMFormSubmitKit_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7697460214BD7C5FE494AF9 /* Pods_FMFormSubmitKit_Tests.framework */; };
 /* End PBXBuildFile section */
@@ -73,6 +74,7 @@
 		C34B80A0244AA9030030C3D0 /* FormListSubmitVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormListSubmitVC.h; sourceTree = "<group>"; };
 		C34B80A1244AA9030030C3D0 /* SubmitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubmitViewController.m; sourceTree = "<group>"; };
 		C34B80A2244AA9030030C3D0 /* FormListSubmitVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormListSubmitVC.m; sourceTree = "<group>"; };
+		C37E3FF224A095FF0013F2F8 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		C3B480C6244E79C300423E7A /* FMUpImageItemView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMUpImageItemView.h; sourceTree = "<group>"; };
 		C3B480C7244E79C300423E7A /* FMUpImageItemView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMUpImageItemView.m; sourceTree = "<group>"; };
 		F7697460214BD7C5FE494AF9 /* Pods_FMFormSubmitKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FMFormSubmitKit_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,6 +87,7 @@
 			files = (
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
+				C37E3FF324A095FF0013F2F8 /* AudioToolbox.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
 				0F1755DDEE178C3D60BA613A /* Pods_FMFormSubmitKit_Example.framework in Frameworks */,
 			);
@@ -128,6 +131,7 @@
 		6003F58C195388D20070C39A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C37E3FF224A095FF0013F2F8 /* AudioToolbox.framework */,
 				6003F58D195388D20070C39A /* Foundation.framework */,
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,

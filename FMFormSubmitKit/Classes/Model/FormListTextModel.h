@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, copy)NSString *value;
 @property(nonatomic, assign)UIKeyboardType keyboardType;
 @property(nonatomic, assign)BOOL hasRight;
+///支持UIImage  NSString NSAttributeString
 @property(nonatomic, strong)id rightC;
 @property(nonatomic, assign)BOOL isSelect;
 @property(nonatomic, assign)NSTextAlignment alignment;

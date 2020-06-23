@@ -18,6 +18,8 @@
 
 @implementation FormListTextCell
 
+#pragma mark ----- UI_APPEARANCE_SELECTOR ----
+
 - (void)dealloc{
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
@@ -53,6 +55,9 @@
             make.right.mas_equalTo(tf);
         }];
         self.eyeBtn = eye;
+        
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(textFieldRightViewTap)];
+        [self.contentView addGestureRecognizer:tap];
     }
     return self;
 }
@@ -103,6 +108,8 @@
                 make.right.mas_equalTo(0);
                 make.centerY.mas_equalTo(0);
             }];
+            UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(textFieldRightViewTap)];
+            [view addGestureRecognizer:tap];
             self.textF.rightView = view;
         } else {
             self.textF.rightView = nil;
@@ -117,6 +124,14 @@
     } else {
         self.eyeBtn.hidden = YES;
         self.textF.secureTextEntry = NO;
+    }
+}
+
+- (void)textFieldRightViewTap{
+    if (self.model.convertText) {
+        if (self.model.convertText.isSelect) {
+            !self.model.convertText.selectBlock?:self.model.convertText.selectBlock(self.textF, self.model.convertText);
+        }
     }
 }
 

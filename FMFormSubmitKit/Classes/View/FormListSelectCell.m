@@ -22,8 +22,7 @@
         UIView *btnView = [[UIView alloc] init];
         [self.contentView insertSubview:btnView atIndex:0];
         [btnView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.top.bottom.equalTo(@0);
-            make.right.mas_equalTo(-FormCellLRMargin);
+            make.left.top.bottom.right.equalTo(@0);
         }];
         self.btnView = btnView;
     }
@@ -70,7 +69,8 @@
         }
         [btn addTarget:self action:@selector(btnSelectClick:) forControlEvents:UIControlEventTouchUpInside];
         [btn setContentHorizontalAlignment:UIControlContentHorizontalAlignmentLeft];
-        [self.contentView addSubview:btn];
+        btn.tag = index;
+        [self.btnView addSubview:btn];
         [btn mas_makeConstraints:^(MASConstraintMaker *make) {
             make.right.equalTo(left).offset(-FormCellLRMargin);
             make.top.bottom.equalTo(@0);
