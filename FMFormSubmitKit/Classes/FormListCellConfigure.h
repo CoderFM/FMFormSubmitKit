@@ -2,7 +2,7 @@
 //  FormListCellConfigure.h
 //  YaLeGou
 //
-//  Created by 郑桂华 on 2019/12/17.
+//  Created by 周发明 on 2019/12/17.
 //  Copyright © 2019 y. All rights reserved.
 //
 
@@ -14,18 +14,22 @@ NS_ASSUME_NONNULL_BEGIN
 @class FormListUpImageConfigure;
 @interface FormListCellConfigure : NSObject
 
-///支持的小数位数
+///默认支持的小数位数 2
 @property(nonatomic, assign)NSInteger inputDecimalCount;
 
+///默认左右边距 
 @property(nonatomic, assign)CGFloat lrMargin;
+///箭头左边边距
 @property(nonatomic, assign)CGFloat arrowLMagin;
+///默认分割线高度
 @property(nonatomic, assign)CGFloat bottomLineDefaultHeight;
 
+///默认TextFieldCell高度
 @property(nonatomic, assign)CGFloat textDefaultHeight;
+///默认TextField左边边距
 @property(nonatomic, assign)CGFloat tfLMagin;
+///默认TextFieldCell高度
 @property(nonatomic, assign)CGFloat textVDefaultHeight;
-
-@property(nonatomic, assign)CGFloat cellArrowLMagin;
 
 @property(nonatomic, assign)CGFloat tvTitleTopMargin;
 

@@ -2,8 +2,8 @@
 //  FormListTextModel.h
 //  ChengXuan
 //
-//  Created by 郑桂华 on 2019/11/28.
-//  Copyright © 2019 蔡华荣. All rights reserved.
+//  Created by 周发明 on 2019/11/28.
+//  Copyright © 2019 周发明. All rights reserved.
 //
 
 #import "FormListTitleModel.h"

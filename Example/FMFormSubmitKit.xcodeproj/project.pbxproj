@@ -27,6 +27,9 @@
 		C34B80A4244AA9030030C3D0 /* FormListSubmitVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C34B80A2244AA9030030C3D0 /* FormListSubmitVC.m */; };
 		C37E3FF324A095FF0013F2F8 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C37E3FF224A095FF0013F2F8 /* AudioToolbox.framework */; };
 		C3B480C8244E79C300423E7A /* FMUpImageItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B480C7244E79C300423E7A /* FMUpImageItemView.m */; };
+		C3C50C5924A9CA3200195651 /* FMPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3C50C5524A9CA3200195651 /* FMPickerView.xib */; };
+		C3C50C5A24A9CA3200195651 /* FMPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C50C5724A9CA3200195651 /* FMPickerView.m */; };
+		C3C50C5B24A9CA3200195651 /* FMSelectManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C50C5824A9CA3200195651 /* FMSelectManager.m */; };
 		DFDEDB86EF677D60DE13DA52 /* Pods_FMFormSubmitKit_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7697460214BD7C5FE494AF9 /* Pods_FMFormSubmitKit_Tests.framework */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +80,11 @@
 		C37E3FF224A095FF0013F2F8 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		C3B480C6244E79C300423E7A /* FMUpImageItemView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMUpImageItemView.h; sourceTree = "<group>"; };
 		C3B480C7244E79C300423E7A /* FMUpImageItemView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMUpImageItemView.m; sourceTree = "<group>"; };
+		C3C50C5424A9CA3200195651 /* FMSelectManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMSelectManager.h; sourceTree = "<group>"; };
+		C3C50C5524A9CA3200195651 /* FMPickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FMPickerView.xib; sourceTree = "<group>"; };
+		C3C50C5624A9CA3200195651 /* FMPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMPickerView.h; sourceTree = "<group>"; };
+		C3C50C5724A9CA3200195651 /* FMPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMPickerView.m; sourceTree = "<group>"; };
+		C3C50C5824A9CA3200195651 /* FMSelectManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMSelectManager.m; sourceTree = "<group>"; };
 		F7697460214BD7C5FE494AF9 /* Pods_FMFormSubmitKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FMFormSubmitKit_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -156,6 +164,11 @@
 				C34B80A1244AA9030030C3D0 /* SubmitViewController.m */,
 				C3B480C6244E79C300423E7A /* FMUpImageItemView.h */,
 				C3B480C7244E79C300423E7A /* FMUpImageItemView.m */,
+				C3C50C5424A9CA3200195651 /* FMSelectManager.h */,
+				C3C50C5824A9CA3200195651 /* FMSelectManager.m */,
+				C3C50C5624A9CA3200195651 /* FMPickerView.h */,
+				C3C50C5724A9CA3200195651 /* FMPickerView.m */,
+				C3C50C5524A9CA3200195651 /* FMPickerView.xib */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
@@ -301,6 +314,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
+				C3C50C5924A9CA3200195651 /* FMPickerView.xib in Resources */,
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
@@ -409,10 +423,12 @@
 			files = (
 				C34B80A3244AA9030030C3D0 /* SubmitViewController.m in Sources */,
 				C34B80A4244AA9030030C3D0 /* FormListSubmitVC.m in Sources */,
+				C3C50C5B24A9CA3200195651 /* FMSelectManager.m in Sources */,
 				6003F59E195388D20070C39A /* FMAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* FMViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 				C3B480C8244E79C300423E7A /* FMUpImageItemView.m in Sources */,
+				C3C50C5A24A9CA3200195651 /* FMPickerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

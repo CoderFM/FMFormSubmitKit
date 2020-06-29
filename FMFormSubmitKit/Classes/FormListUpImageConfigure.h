@@ -2,7 +2,7 @@
 //  FormListUpImageConfigure.h
 //  FMFormSubmitKit
 //
-//  Created by 郑桂华 on 2020/4/18.
+//  Created by 周发明 on 2020/4/18.
 //
 
 #import <Foundation/Foundation.h>

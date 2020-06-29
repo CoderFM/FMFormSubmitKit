@@ -2,7 +2,7 @@
 //  FMUpImageItemView.h
 //  FMFormSubmitKit_Example
 //
-//  Created by 郑桂华 on 2020/4/21.
+//  Created by 周发明 on 2020/4/21.
 //  Copyright © 2020 zhoufaming251@163.com. All rights reserved.
 //
 

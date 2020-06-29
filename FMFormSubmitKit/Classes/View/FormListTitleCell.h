@@ -2,8 +2,8 @@
 //  FormListTitleCell.h
 //  FormSubmitList
 //
-//  Created by 郑桂华 on 2020/4/18.
-//  Copyright © 2020 郑桂华. All rights reserved.
+//  Created by 周发明 on 2020/4/18.
+//  Copyright © 2020 周发明. All rights reserved.
 //
 
 #import "FormListBaseCell.h"

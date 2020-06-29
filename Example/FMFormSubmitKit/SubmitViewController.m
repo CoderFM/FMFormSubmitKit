@@ -2,8 +2,8 @@
 //  SubmitViewController.m
 //  FormSubmitList
 //
-//  Created by 郑桂华 on 2019/12/20.
-//  Copyright © 2019 郑桂华. All rights reserved.
+//  Created by 周发明 on 2019/12/20.
+//  Copyright © 2019 周发明. All rights reserved.
 //
 
 #import "SubmitViewController.h"
@@ -11,6 +11,8 @@
 #import <FormListUpImageConfigure.h>
 
 #import <AudioToolbox/AudioToolbox.h>
+
+#import "FMSelectManager.h"
 
 @interface SubmitViewController ()
 
@@ -28,6 +30,8 @@
     [FormListCellConfigure defaultConfigure].eyeSelectedImage = [UIImage imageNamed:@"login_eye_yes"];
     
     [FormListCellConfigure defaultConfigure].inputDecimalCount = 4;
+    
+    [FMSelectManager manager];
     
 //    [self addData];
 }
@@ -119,7 +123,9 @@
         FormListTextModel *model = [FormListTextModel modelWithPlaceholder:@"请选择" keyboardType:UIKeyboardTypeDefault hasRight:YES righrContent:[UIImage imageNamed:@"mine_arrow_right_black"] title:@"选择"];
         model.isSelect = YES;
         [model setSelectBlock:^(id  _Nonnull tftv, FormListTextModel * _Nonnull model) {
-            
+            [[FMSelectManager manager] showSelectTimeWithMiddleTitle:@"时间" okBlock:^(NSDate *date) {
+                
+            }];
         }];
         [self.dataSource addObject:model];
     }

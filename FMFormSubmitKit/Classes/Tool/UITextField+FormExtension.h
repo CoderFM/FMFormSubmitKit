@@ -2,7 +2,7 @@
 //  UITextField+ChineseInput.h
 //  QiaoKeApp
 //
-//  Created by 郑桂华 on 2020/3/30.
+//  Created by 周发明 on 2020/3/30.
 //
 
 #import <UIKit/UIKit.h>

@@ -2,7 +2,7 @@
 //  NSString+FormEmoji.m
 //  FMFormSubmitKit
 //
-//  Created by 郑桂华 on 2020/5/12.
+//  Created by 周发明 on 2020/5/12.
 //
 
 #import "NSString+FormEmoji.h"
