@@ -12,7 +12,8 @@
 
 #import <AudioToolbox/AudioToolbox.h>
 
-#import "FMSelectManager.h"
+//#import "FMDatePickerView.h"
+//#import "FMPickerDataView.h"
 
 @interface SubmitViewController ()
 
@@ -30,8 +31,6 @@
     [FormListCellConfigure defaultConfigure].eyeSelectedImage = [UIImage imageNamed:@"login_eye_yes"];
     
     [FormListCellConfigure defaultConfigure].inputDecimalCount = 4;
-    
-    [FMSelectManager manager];
     
 //    [self addData];
 }
@@ -123,9 +122,19 @@
         FormListTextModel *model = [FormListTextModel modelWithPlaceholder:@"请选择" keyboardType:UIKeyboardTypeDefault hasRight:YES righrContent:[UIImage imageNamed:@"mine_arrow_right_black"] title:@"选择"];
         model.isSelect = YES;
         [model setSelectBlock:^(id  _Nonnull tftv, FormListTextModel * _Nonnull model) {
-            [[FMSelectManager manager] showSelectTimeWithMiddleTitle:@"时间" okBlock:^(NSDate *date) {
-                
-            }];
+//            [[FMSelectManager manager] showSelectTimeWithMiddleTitle:@"时间" okBlock:^(NSDate *date) {
+//
+//            }];
+            
+//            FMPickerDataView *picker = [FMPickerDataView show];
+//            picker.items = [@[@[@"1", @"2", @"3"], @[@"3", @"3", @"1", @"6"]] mutableCopy];
+//            picker.components = 2;
+//            [picker setComponentItems:^NSArray * _Nonnull(NSInteger components, id  _Nonnull lastObj) {
+//                return lastObj;
+//            }];
+//            [picker setLabelShowText:^NSString * _Nonnull(id  _Nonnull lastObj) {
+//                return @"自定义";
+//            }];
         }];
         [self.dataSource addObject:model];
     }
