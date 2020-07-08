@@ -48,14 +48,14 @@
 - (void)setModel:(FormListTextModel *)model{
     [super setModel:model];
     
+    self.textV.limitCount = model.limitCount;
+    self.textV.inputPredicate = model.inputPredicate;
+    
     self.textV.font = model.textFont;
     self.textV.textColor = model.textColor;
     self.textV.placeholder = model.placehoder;
     self.textV.textAlignment = model.alignment;
     self.textV.text = model.text;
-    if (model.configurationBlock) {
-        model.configurationBlock(self.textV);
-    }
     if (model.textVTopMargin > 0) {
         [self.textV mas_updateConstraints:^(MASConstraintMaker *make) {
             make.top.mas_equalTo(model.textVTopMargin - 8);
@@ -70,6 +70,9 @@
             make.left.mas_equalTo(model.textFLeftMargin - 8);
         }];
     }
+    if (model.configurationBlock) {
+        model.configurationBlock(self.textV);
+    }
 }
 
 - (BOOL)textViewShouldBeginEditing:(UITextView *)textView{
@@ -83,9 +86,6 @@
 
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text{
     FormListTextModel *model = (FormListTextModel *)self.model;
-//    if (!model.supportEmoji && textView.isEmojiInput) {
-//        return NO;
-//    }
     if (textView.isChineseInput) {
         return YES;
     }
@@ -99,26 +99,11 @@
 - (void)textViewDidChange:(UITextView *)textView{
     FormListTextModel *model = (FormListTextModel *)self.model;
     
-//    if (!model.supportEmoji) {
-//        self.textV.text = [self.textV.text removeEmoji];
-//    }
-    
-    if (self.textV.isChineseInput) {
-        [self.textV matchWithPattern:model.inputPredicate];
-    }
+    [FormVerifyManager handleTextViewTextDidChange:self.textV];
     
     model.text = self.textV.text;
     if (!model.isSelect) {
         model.value = model.text;
-    }
-    
-    if (![self.textV hasInputPinYin]) {
-        if (model.limitCount > 0) {
-            if (self.textV.text.length > model.limitCount) {
-                self.textV.text = [self.textV.text substringToIndex:model.limitCount];
-                model.text = self.textV.text;
-            }
-        }
     }
     
     if (model.textLengthChange) {

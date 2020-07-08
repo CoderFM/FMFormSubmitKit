@@ -8,6 +8,7 @@
 
 #import "FormListCellConfigure.h"
 #import "FormListUpImageConfigure.h"
+#import "FormVerifyManager.h"
 
 @interface FormListCellConfigure ()
 
@@ -43,7 +44,6 @@
         
         
         _FormListCellConfigureInstance.currentConfigure = [FormListUpImageConfigure defaultConfigure];
-        
     });
     return _FormListCellConfigureInstance;
 }

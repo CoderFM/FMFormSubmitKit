@@ -6,18 +6,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FormVerifyTextDelegate.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface UITextField (FormExtension)
-
-- (BOOL)isChineseInput;
-
-- (BOOL)isEmojiInput;
-
-- (void)matchWithPattern:(NSString *)pattern;
-
-- (BOOL)hasInputPinYin;
+@interface UITextField (FormExtension)<FormVerifyTextDelegate>
 
 @end
 

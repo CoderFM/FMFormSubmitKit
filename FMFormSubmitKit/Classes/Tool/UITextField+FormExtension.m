@@ -27,6 +27,32 @@
     placeholderLabel.textColor = FormUIColorFromRGB(0x999999);
 }
 
+- (void)setLimitCount:(NSInteger)limitCount{
+    objc_setAssociatedObject(self, FormTextLimitCountKey, @(limitCount), OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+
+- (NSInteger)limitCount{
+    NSNumber *obj = objc_getAssociatedObject(self, FormTextLimitCountKey);
+    if (obj == nil) {
+        obj = @0;
+        objc_setAssociatedObject(self, FormTextLimitCountKey, obj, OBJC_ASSOCIATION_COPY_NONATOMIC);
+    }
+    return [obj integerValue];
+}
+
+- (void)setInputPredicate:(NSString *)inputPredicate{
+    objc_setAssociatedObject(self, FormTextInputPredicateKey, inputPredicate, OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+
+- (NSString *)inputPredicate{
+    NSString *obj = objc_getAssociatedObject(self, FormTextInputPredicateKey);
+    return obj;
+}
+
+- (void)handleTextDidChange{
+    [FormVerifyManager handleTextFieldTextDidChange:self];
+}
+
 - (BOOL)isChineseInput{
     NSString *lang = [[self textInputMode] primaryLanguage];
     if([lang isEqualToString:@"zh-Hans"]) {

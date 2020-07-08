@@ -65,6 +65,10 @@
 - (void)setModel:(FormListTextModel *)model{
     [super setModel:model];
     
+    
+     self.textF.inputPredicate = model.inputPredicate;
+     self.textF.limitCount = model.limitCount;
+    
     self.textF.textColor = model.textColor;
     self.textF.font = model.textFont;
     self.textF.placeholder = model.placehoder;
@@ -125,6 +129,7 @@
         self.eyeBtn.hidden = YES;
         self.textF.secureTextEntry = NO;
     }
+ 
 }
 
 - (void)textFieldRightViewTap{
@@ -138,53 +143,11 @@
 - (void)textFieldTextDidChange:(NSNotification *)noti{
     FormListTextModel *model = (FormListTextModel *)self.model;
     
-    if (model.inputPredicate && [model.inputPredicate isEqualToString:FormVerifyOnlyDecimal]) {
-        if ([self.textF.text containsString:@"."]) {
-            NSArray *texts = [self.textF.text componentsSeparatedByString:@"."];
-            NSString *begin = [texts firstObject];
-            if ([begin integerValue] == 0) {
-                begin = @"0";
-            } else {
-                begin = [NSString stringWithFormat:@"%ld", [begin integerValue]];
-            }
-            if (texts.count > 1) {
-                NSString *last = texts[1];
-                if (last.length > [FormListCellConfigure defaultConfigure].inputDecimalCount) {
-                    last = [last substringToIndex:[FormListCellConfigure defaultConfigure].inputDecimalCount];
-                }
-                self.textF.text = [@[begin, last] componentsJoinedByString:@"."];
-            } else {
-                self.textF.text = [NSString stringWithFormat:@"%@.", begin];
-            }
-        } else {
-            NSString *begin = self.textF.text;
-            if (begin.length > 0) {
-                if ([begin integerValue] == 0) {
-                    begin = @"0";
-                } else {
-                    begin = [NSString stringWithFormat:@"%ld", [begin integerValue]];
-                }
-                self.textF.text = begin;
-            }
-        }
-    }
-    
-    if (self.textF.isChineseInput) {
-        [self.textF matchWithPattern:model.inputPredicate];
-    }
+    [FormVerifyManager handleTextFieldTextDidChange:self.textF];
     
     model.text = self.textF.text;
     if (!model.isSelect) {
         model.value = model.text;
-    }
-    
-    if (![self.textF hasInputPinYin]) {
-        if (model.limitCount > 0) {
-            if (self.textF.text.length > model.limitCount) {
-                self.textF.text = [self.textF.text substringToIndex:model.limitCount];
-                model.text = self.textF.text;
-            }
-        }
     }
     
     if (model.textLengthChange) {
@@ -204,9 +167,6 @@
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
     FormListTextModel *model = (FormListTextModel *)self.model;
-//    if (!model.supportEmoji && textField.isEmojiInput) {
-//        return NO;
-//    }
     if (textField.isChineseInput) {
         return YES;
     }

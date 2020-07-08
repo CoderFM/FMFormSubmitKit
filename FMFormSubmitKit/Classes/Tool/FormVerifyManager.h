@@ -25,12 +25,15 @@ NS_ASSUME_NONNULL_BEGIN
 #define FormVerifyOnlyChinese @"[\u4e00-\u9fa5]+"
 ///中文+数字+字母
 #define FormVerifyChineseLetterNumber @"[A-Za-z0-9\u4e00-\u9fa5]+"
-///字符密码
-#define FormVerifyPassword @"^(?![0-9]+$)(?![a-zA-Z]+$)[a-zA-Z0-9]{6,20}"
-///小数
-#define FormVerifyDecimal @"(([0]|(0[.]\\d{0,2}))|([1-9]\\d{0,8}(([.]\\d{0,2})?)))?"
-/// 只能输入带2位小数的数值
+/// 只能输入小数的数值
 #define FormVerifyOnlyDecimal @"[0-9.]+"
+
+@interface FormVerifyManager : NSObject
+
++ (void)handleTextFieldTextDidChange:(UITextField *)textF;
++ (void)handleTextViewTextDidChange:(UITextView *)textV;
+
+@end
 
 @interface NSString (FormVerifyManager)
 
