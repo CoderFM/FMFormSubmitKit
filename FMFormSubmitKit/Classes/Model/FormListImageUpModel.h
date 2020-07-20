@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 @class FormListImageSelectModel, FormListUpImageConfigure;
 @interface FormListImageUpModel : FormListTitleModel
 @property(nonatomic, assign)BOOL canDynamicAdd;
+@property(nonatomic, assign)NSInteger minCount;
 @property(nonatomic, assign)NSInteger maxCount;
 @property(nonatomic, copy)void(^refreshBlock)(void);
 @property(nonatomic, strong)NSArray<FormListImageSelectModel *> *images;
