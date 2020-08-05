@@ -51,11 +51,13 @@
     self.textV.limitCount = model.limitCount;
     self.textV.inputPredicate = model.inputPredicate;
     
+    self.textV.placeholderLabel.textColor = model.placeholderColor;
     self.textV.font = model.textFont;
     self.textV.textColor = model.textColor;
     self.textV.placeholder = model.placehoder;
     self.textV.textAlignment = model.alignment;
     self.textV.text = model.text;
+    self.textV.tintColor = model.textTintColor;
     if (model.textVTopMargin > 0) {
         [self.textV mas_updateConstraints:^(MASConstraintMaker *make) {
             make.top.mas_equalTo(model.textVTopMargin - 8);

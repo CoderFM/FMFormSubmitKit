@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 @interface FormListImageUpCell : FormListTitleCell
-@property(nonatomic, weak)UIView *btnContentView;
+@property(nonatomic, weak)UIScrollView *btnContentView;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -15,6 +15,8 @@
 
 @interface FormListImageUpCell ()
 
+@property(nonatomic, assign)BOOL scrollToLast;
+
 @end
 
 @implementation FormListImageUpCell
@@ -23,7 +25,7 @@
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         {
-            UIView *view = [[UIView alloc] init];
+            UIScrollView *view = [[UIScrollView alloc] init];
             view.clipsToBounds = YES;
             [self.contentView addSubview:view];
             self.btnContentView = view;
@@ -42,6 +44,21 @@
     [self.btnContentView.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         [obj removeFromSuperview];
     }];
+    if (model.oneLineScroll) {
+        CGFloat width = model.imageConfigure.inset.left + model.images.count * model.imageConfigure.imageWidth + (model.images.count - 1) * model.imageConfigure.imageItemSpace + model.imageConfigure.inset.right;
+        self.btnContentView.contentSize = CGSizeMake(width, 0);
+        [model.imageConfigure oneLineScrollMasonyMake];
+        if (self.scrollToLast) {
+            CGFloat scrollOffsetX = width - self.bounds.size.width;
+            if (scrollOffsetX < 0) {
+                scrollOffsetX = 0;
+            }
+            [self.btnContentView setContentOffset:CGPointMake(scrollOffsetX, 0) animated:YES];
+        }
+        self.scrollToLast = NO;
+    } else {
+        self.btnContentView.contentSize = CGSizeZero;
+    }
     for (int i = 0; i < model.images.count; i++) {
         FormListImageSelectModel *btnModel = model.images[i];
         FormListImageUpCellItemView *view = [[model.imageConfigure.imageViewClass alloc] init];
@@ -57,6 +74,9 @@
                             NSMutableArray *arrm = [NSMutableArray arrayWithArray:upModel.images];
                             [arrm addObject:upModel.imageConfigure.createAddModel()];
                             upModel.images = [NSArray arrayWithArray:arrm];
+                            if (upModel.oneLineScroll) {
+                                weakSelf.scrollToLast = YES;
+                            }
                         }
                     }
                     if (upModel.selectImageBlock) {

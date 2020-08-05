@@ -27,6 +27,8 @@
         self.titleFont = FormCellTitleFont;
         self.textFont = FormCellTFTVFont;
         self.titleColor = FormCellTitleColor;
+        self.placeholderColor = FormCellPlaceholderColor;
+        self.textTintColor = [FormListCellConfigure defaultConfigure].textTintColor;
         self.supportEmoji = YES;
     }
     return self;

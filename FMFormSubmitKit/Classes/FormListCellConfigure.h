@@ -38,6 +38,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, strong)UIColor *TFTVColor;
 @property(nonatomic, strong)UIColor *imageIntroColor;
 
+@property(nonatomic, strong)UIColor *placeholderColor;
+@property(nonatomic, strong)UIColor *textTintColor;
+
 @property(nonatomic, strong)UIFont *titleFont;
 @property(nonatomic, strong)UIFont *TFTVFont;
 @property(nonatomic, strong)UIFont *imageIntroFont;

@@ -33,6 +33,9 @@
 
 #define FormCellTFTVColor [FormListCellConfigure defaultConfigure].TFTVColor // 文本颜色
 #define FormCellTFTVFont [FormListCellConfigure defaultConfigure].TFTVFont // 文本字体
+
+#define FormCellPlaceholderColor [FormListCellConfigure defaultConfigure].placeholderColor // 标题颜色
+
 #define FormCellTVTitleTopMargin [FormListCellConfigure defaultConfigure].tvTitleTopMargin // TV的Title的顶部边距
 
 #define FormTextCellDefaultHeight [FormListCellConfigure defaultConfigure].textDefaultHeight // 默认TFCell的高度

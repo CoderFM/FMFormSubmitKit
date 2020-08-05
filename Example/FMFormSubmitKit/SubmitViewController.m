@@ -32,12 +32,12 @@
     
     [FormListCellConfigure defaultConfigure].inputDecimalCount = 4;
     
-//    [self addData];
+    //    [self addData];
 }
 
 - (void)submitClick{
     NSLog(@"%@", self.tableView.submitParam);
-//    AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
+    //    AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
     AudioServicesPlaySystemSound(1519);
 }
 
@@ -70,6 +70,7 @@
     {
         FormListTextModel *model = [FormListTextModel modelWithPlaceholder:@"请输入(支持emoji表情输入)" keyboardType:UIKeyboardTypeDefault hasRight:NO righrContent:nil title:@""];
         model.textFLeftMargin = FormCellLRMargin;
+        model.textTintColor = [UIColor redColor];
         [self.dataSource addObject:model];
     }
     {
@@ -78,6 +79,7 @@
         model.alignment = NSTextAlignmentLeft;
         model.inputPredicate = FormVerifyOnlyChinese;
         model.limitCount = 10;
+        model.placeholderColor = [UIColor orangeColor];
         [self.dataSource addObject:model];
     }
     {
@@ -122,19 +124,19 @@
         FormListTextModel *model = [FormListTextModel modelWithPlaceholder:@"请选择" keyboardType:UIKeyboardTypeDefault hasRight:YES righrContent:[UIImage imageNamed:@"mine_arrow_right_black"] title:@"选择"];
         model.isSelect = YES;
         [model setSelectBlock:^(id  _Nonnull tftv, FormListTextModel * _Nonnull model) {
-//            [[FMSelectManager manager] showSelectTimeWithMiddleTitle:@"时间" okBlock:^(NSDate *date) {
-//
-//            }];
+            //            [[FMSelectManager manager] showSelectTimeWithMiddleTitle:@"时间" okBlock:^(NSDate *date) {
+            //
+            //            }];
             
-//            FMPickerDataView *picker = [FMPickerDataView show];
-//            picker.items = [@[@[@"1", @"2", @"3"], @[@"3", @"3", @"1", @"6"]] mutableCopy];
-//            picker.components = 2;
-//            [picker setComponentItems:^NSArray * _Nonnull(NSInteger components, id  _Nonnull lastObj) {
-//                return lastObj;
-//            }];
-//            [picker setLabelShowText:^NSString * _Nonnull(id  _Nonnull lastObj) {
-//                return @"自定义";
-//            }];
+            //            FMPickerDataView *picker = [FMPickerDataView show];
+            //            picker.items = [@[@[@"1", @"2", @"3"], @[@"3", @"3", @"1", @"6"]] mutableCopy];
+            //            picker.components = 2;
+            //            [picker setComponentItems:^NSArray * _Nonnull(NSInteger components, id  _Nonnull lastObj) {
+            //                return lastObj;
+            //            }];
+            //            [picker setLabelShowText:^NSString * _Nonnull(id  _Nonnull lastObj) {
+            //                return @"自定义";
+            //            }];
         }];
         [self.dataSource addObject:model];
     }
@@ -153,10 +155,10 @@
         FormListImageSelectModel *selModel1 = [[FormListImageSelectModel alloc] init];
         FormListImageSelectModel *selModel2 = [[FormListImageSelectModel alloc] init];
         FormListImageSelectModel *selModel3 = [[FormListImageSelectModel alloc] init];
-            model.images = [@[selModel, selModel1, selModel2, selModel3, ] mutableCopy];
+        model.images = [@[selModel, selModel1, selModel2, selModel3, ] mutableCopy];
         model.imageConfigure.imageViewClass = [FMUpImageItemView class];
         model.canDynamicAdd = NO;
-//        model.maxCount = 8;
+        //        model.maxCount = 8;
         [model setRefreshBlock:^{
             [self.tableView reloadData];
         }];
@@ -168,7 +170,7 @@
         model.cellHeight = 300;
         model.textFLeftMargin = 15;
         model.textVTopMargin = 5;
-//        model.isSelect = YES;
+        //        model.isSelect = YES;
         model.limitCount = 10;
         model.submitKey = @"textViewtext";
         model.inputPredicate = FormVerifyOnlyLetter;
@@ -178,23 +180,43 @@
         [self.dataSource addObject:model];
     }
     {
-            FormListImageUpModel *model = [[FormListImageUpModel alloc] init];
+        FormListImageUpModel *model = [[FormListImageUpModel alloc] init];
         FormListImageSelectModel *selModel = [[FormListImageSelectModel alloc] init];
         selModel.imageUrl = @"image0.imageUrl";
         FormListImageSelectModel *selModel1 = [[FormListImageSelectModel alloc] init];
         selModel1.imageUrl = @"image1.imageUrl";
         FormListImageSelectModel *selModel2 = [[FormListImageSelectModel alloc] init];
         FormListImageSelectModel *selModel3 = [[FormListImageSelectModel alloc] init];
-            model.images = [@[selModel, selModel1, selModel2, selModel3, ] mutableCopy];
-            model.imageConfigure.imageViewClass = [FMUpImageItemView class];
-            model.canDynamicAdd = YES;
-            model.maxCount = 8;
+        model.images = [@[selModel, selModel1, selModel2, selModel3, ] mutableCopy];
+        model.imageConfigure.imageViewClass = [FMUpImageItemView class];
+        model.canDynamicAdd = YES;
+        model.maxCount = 8;
         model.submitKey = @"image[]";
-            [model setRefreshBlock:^{
-                [self.tableView reloadData];
-            }];
-            [self.dataSource addObject:model];
-        }
+        [model setRefreshBlock:^{
+            [self.tableView reloadData];
+        }];
+        [self.dataSource addObject:model];
+    }
+    {
+        FormListImageUpModel *model = [[FormListImageUpModel alloc] init];
+        FormListImageSelectModel *selModel = [[FormListImageSelectModel alloc] init];
+        selModel.imageUrl = @"image0.imageUrl";
+        FormListImageSelectModel *selModel1 = [[FormListImageSelectModel alloc] init];
+        selModel1.imageUrl = @"image1.imageUrl";
+        FormListImageSelectModel *selModel2 = [[FormListImageSelectModel alloc] init];
+        FormListImageSelectModel *selModel3 = [[FormListImageSelectModel alloc] init];
+        model.images = [@[selModel, selModel1, selModel2, selModel3, ] mutableCopy];
+        model.imageConfigure = [[FormListUpImageConfigure defaultConfigure] copy];
+        model.imageConfigure.imageViewClass = [FMUpImageItemView class];
+        model.oneLineScroll = YES;
+        model.canDynamicAdd = YES;
+        model.maxCount = 8;
+        model.submitKey = @"image[]";
+        [model setRefreshBlock:^{
+            [self.tableView reloadData];
+        }];
+        [self.dataSource addObject:model];
+    }
     ///多种类型
     
     [self.tableView reloadData];

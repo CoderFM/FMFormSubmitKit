@@ -16,7 +16,7 @@ typedef enum : NSUInteger {
 } FormListUpImageDirection;
 
 @class MASConstraintMaker, FormListImageSelectModel;
-@interface FormListUpImageConfigure : NSObject
+@interface FormListUpImageConfigure : NSObject<NSCopying>
 
 @property(nonatomic, assign)FormListUpImageDirection direction;
 @property(nonatomic, assign)CGFloat totalWidth;
@@ -36,7 +36,7 @@ typedef enum : NSUInteger {
 + (instancetype)defaultConfigure;
 + (instancetype)configureWithInset:(UIEdgeInsets)inset lineSpace:(CGFloat)lineSpace itemSpace:(CGFloat)itemSpace imageSize:(CGSize)imageSize column:(NSInteger)column;
 - (CGFloat)heightWithCount:(NSInteger)count;
-
+- (void)oneLineScrollMasonyMake;
 @end
 
 NS_ASSUME_NONNULL_END

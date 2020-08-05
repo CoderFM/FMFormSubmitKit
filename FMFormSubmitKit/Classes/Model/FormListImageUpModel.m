@@ -41,9 +41,14 @@
 }
 
 - (CGFloat)interiorHeight{
-    NSInteger count = self.canDynamicAdd ? (self.maxCount > 0 ? MIN(self.images.count, self.maxCount) : self.images.count) : self.images.count;
-    _interiorHeight = [self.imageConfigure heightWithCount:count] + self.bottomLineHeight;
-    return _interiorHeight;
+    if (self.oneLineScroll) {
+        _interiorHeight = self.imageConfigure.inset.top + self.imageConfigure.imageHeight + self.imageConfigure.inset.bottom;
+        return _interiorHeight;
+    } else {
+        NSInteger count = self.canDynamicAdd ? (self.maxCount > 0 ? MIN(self.images.count, self.maxCount) : self.images.count) : self.images.count;
+        _interiorHeight = [self.imageConfigure heightWithCount:count] + self.bottomLineHeight;
+        return _interiorHeight;
+    }
 }
 
 - (instancetype)init{

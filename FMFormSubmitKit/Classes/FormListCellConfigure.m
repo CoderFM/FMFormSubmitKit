@@ -36,6 +36,9 @@
         _FormListCellConfigureInstance.TFTVColor = FormUIColorFromRGB(0x333333);
         _FormListCellConfigureInstance.imageIntroColor = FormUIColorFromRGB(0x888888);
         
+        _FormListCellConfigureInstance.placeholderColor = FormUIColorFromRGB(0x999999);
+        _FormListCellConfigureInstance.textTintColor = [UIColor blackColor];
+        
         _FormListCellConfigureInstance.tvTitleTopMargin = Form_BaseSize(16);
         
         _FormListCellConfigureInstance.titleFont = [UIFont systemFontOfSize:Form_BaseSize(14)];

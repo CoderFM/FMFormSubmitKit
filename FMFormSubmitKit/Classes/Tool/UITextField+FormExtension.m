@@ -11,20 +11,10 @@
 
 @implementation UITextField (FormExtension)
 
-+ (void)load{
-    {
-        Method m1 = class_getInstanceMethod(self, @selector(setPlaceholder:));
-        Method m2 = class_getInstanceMethod(self, @selector(_ex_setPlaceholder:));
-        method_exchangeImplementations(m1, m2);
-    }
-}
-
-- (void)_ex_setPlaceholder:(NSString *)placeholder{
-    [self _ex_setPlaceholder:placeholder];
-    
+- (UILabel *)placeholderLabel{
     Ivar ivar =  class_getInstanceVariable([UITextField class], "_placeholderLabel");
     UILabel *placeholderLabel = object_getIvar(self, ivar);
-    placeholderLabel.textColor = FormUIColorFromRGB(0x999999);
+    return placeholderLabel;
 }
 
 - (void)setLimitCount:(NSInteger)limitCount{

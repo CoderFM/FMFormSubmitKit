@@ -15,6 +15,23 @@
 
 @implementation FormListUpImageConfigure
 
+- (id)copyWithZone:(NSZone *)zone{
+    FormListUpImageConfigure *con = [[self class] allocWithZone:zone];
+    con.direction = self.direction;
+    con.totalWidth = self.totalWidth;
+    con.inset = self.inset;
+    con.imageLineSpace = self.imageLineSpace;
+    con.imageItemSpace = self.imageItemSpace;
+    con.imageHeight = self.imageHeight;
+    con.imageWidth = self.imageWidth;
+    con.placeholderImage = self.placeholderImage;
+    con.column = self.column;
+    con.imageViewClass = self.imageViewClass;
+    con.masony_makeBlock = [self.masony_makeBlock copy];
+    con.createAddModel = [self.createAddModel copy];
+    return con;
+}
+
 - (void (^)(MASConstraintMaker * _Nonnull, NSInteger index))masony_makeBlock{
     if (_masony_makeBlock == nil) {
         __weak typeof(self) weakSelf = self;
@@ -97,6 +114,16 @@
     NSInteger singleCount = self.column;
     NSInteger lines = count % singleCount == 0 ? (count / singleCount) : (count / singleCount + 1);
     return self.inset.top + lines * self.imageHeight + (lines > 0 ? lines - 1 : 0) * self.imageLineSpace + self.inset.bottom;
+}
+
+- (void)oneLineScrollMasonyMake{
+    __weak typeof(self) weakSelf = self;
+    self.masony_makeBlock = ^(MASConstraintMaker * _Nonnull make, NSInteger index) {
+        make.left.mas_equalTo(weakSelf.inset.left + index * (weakSelf.imageWidth + weakSelf.imageItemSpace));
+        make.top.mas_equalTo(weakSelf.inset.top);
+        make.width.mas_equalTo(weakSelf.imageWidth);
+        make.height.mas_equalTo(weakSelf.imageHeight);
+    };
 }
 
 @end

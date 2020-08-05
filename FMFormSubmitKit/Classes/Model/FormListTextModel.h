@@ -27,6 +27,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(nonatomic, strong)UIColor *textColor;
 
+@property(nonatomic, strong)UIColor *placeholderColor;
+@property(nonatomic, strong)UIColor *textTintColor;
+
 @property(nonatomic, assign)CGFloat textFLeftMargin;
 @property(nonatomic, assign)CGFloat textVTopMargin;
 

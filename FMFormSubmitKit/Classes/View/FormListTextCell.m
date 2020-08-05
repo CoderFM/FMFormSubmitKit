@@ -72,9 +72,11 @@
     self.textF.textColor = model.textColor;
     self.textF.font = model.textFont;
     self.textF.placeholder = model.placehoder;
+    self.textF.placeholderLabel.textColor = model.placeholderColor;
     self.textF.text = model.text;
     self.textF.keyboardType = model.keyboardType;
     self.textF.textAlignment = model.alignment;
+    self.textF.tintColor = model.textTintColor;
     [self.textF mas_updateConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(model.textFLeftMargin);
     }];

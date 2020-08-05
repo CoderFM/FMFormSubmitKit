@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UITextField (FormExtension)<FormVerifyTextDelegate>
 
+@property(nonatomic, readonly)UILabel *placeholderLabel;
+
 @end
 
 NS_ASSUME_NONNULL_END
