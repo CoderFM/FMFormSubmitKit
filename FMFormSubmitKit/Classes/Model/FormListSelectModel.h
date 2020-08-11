@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, strong)NSArray *selects;
 @property(nonatomic, assign)NSInteger selectIndex;
 @property(nonatomic, copy)void(^configurationBtn)(NSInteger index, UIButton *btn, NSString *title);
-
+@property(nonatomic, copy)void(^selectClick)(NSInteger *index, UIButton *btn);
 + (instancetype)modelWithTitle:(NSString *)title;
 
 @end

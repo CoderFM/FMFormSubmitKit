@@ -121,6 +121,84 @@
         [self.dataSource addObject:model];
     }
     {
+        FormListBaseModel *model = [FormListBaseModel modelWithCellHeight:5 bottomLineHeight:5 bottomLineLRMargin:0];
+        [self.dataSource addObject:model];
+    }
+    {
+        FormListBaseModel *model = [FormListBaseModel modelWithCellHeight:10 bottomLineHeight:5 bottomLineLRMargin:10];
+        model.bottomLineBMargin = 2;
+        model.bottomLineLMargin = 50;
+        [self.dataSource addObject:model];
+    }
+    {
+        FormListBaseModel *model = [FormListBaseModel modelWithCellHeight:10 bottomLineHeight:1 bottomLineLRMargin:0];
+        [self.dataSource addObject:model];
+    }
+    {
+        FormListTextModel *model = [FormListTextModel modelWithPlaceholder:@"请输入" keyboardType:UIKeyboardTypeDefault hasRight:YES righrContent:@"元" title:@"文本输入"];
+        model.submitKey = @"money";
+        [self.dataSource addObject:model];
+    }
+    {
+        FormListTextModel *model = [FormListTextModel modelWithPlaceholder:@"请输入" keyboardType:UIKeyboardTypeDefault hasRight:NO righrContent:nil title:@"文本输入"];
+        model.alignment = NSTextAlignmentLeft;
+        model.submitKey = @"text";
+        [self.dataSource addObject:model];
+    }
+    {
+        FormListTextModel *model = [FormListTextModel modelWithPlaceholder:@"请输入(支持emoji表情输入)" keyboardType:UIKeyboardTypeDefault hasRight:NO righrContent:nil title:@""];
+        model.textFLeftMargin = FormCellLRMargin;
+        model.textTintColor = [UIColor redColor];
+        [self.dataSource addObject:model];
+    }
+    {
+        FormListTextModel *model = [FormListTextModel modelWithPlaceholder:@"请输入(不支持emoji表情输入)10个字符" keyboardType:UIKeyboardTypeDefault hasRight:NO righrContent:nil title:@""];
+        model.textFLeftMargin = FormCellLRMargin;
+        model.alignment = NSTextAlignmentLeft;
+        model.inputPredicate = FormVerifyOnlyChinese;
+        model.limitCount = 10;
+        model.placeholderColor = [UIColor orangeColor];
+        [self.dataSource addObject:model];
+    }
+    {
+        FormListTextModel *model = [FormListTextModel modelWithPlaceholder:@"请输入" keyboardType:UIKeyboardTypeDefault hasRight:NO righrContent:nil title:@""];
+        model.textFLeftMargin = FormCellLRMargin;
+        model.alignment = NSTextAlignmentLeft;
+        model.eyeEnable = YES;
+        [model setTextLengthChange:^(NSInteger length) {
+            
+        }];
+        [self.dataSource addObject:model];
+    }
+    {
+        FormListTextModel *model = [FormListTextModel modelWithPlaceholder:@"请输入小数" keyboardType:UIKeyboardTypeDefault hasRight:YES righrContent:[UIImage imageNamed:@"mine_arrow_right_black"] title:@""];
+        model.inputPredicate = FormVerifyOnlyDecimal;
+        model.textFLeftMargin = FormCellLRMargin;
+        model.alignment = NSTextAlignmentLeft;
+        [self.dataSource addObject:model];
+    }
+    {
+        FormListTextModel *model = [FormListTextModel modelWithPlaceholder:@"请输入纯中文" keyboardType:UIKeyboardTypeDefault hasRight:YES righrContent:[UIImage imageNamed:@"mine_arrow_right_black"] title:@""];
+        model.inputPredicate = FormVerifyOnlyChinese;
+        model.textFLeftMargin = FormCellLRMargin;
+        model.alignment = NSTextAlignmentLeft;
+        [self.dataSource addObject:model];
+    }
+    {
+        FormListTextModel *model = [FormListTextModel modelWithPlaceholder:@"请输入纯英文" keyboardType:UIKeyboardTypeDefault hasRight:YES righrContent:[UIImage imageNamed:@"mine_arrow_right_black"] title:@""];
+        model.inputPredicate = FormVerifyOnlyLetter;
+        model.textFLeftMargin = FormCellLRMargin;
+        model.alignment = NSTextAlignmentLeft;
+        [self.dataSource addObject:model];
+    }
+    {
+        FormListTextModel *model = [FormListTextModel modelWithPlaceholder:@"请输入纯数字" keyboardType:UIKeyboardTypeDefault hasRight:YES righrContent:[UIImage imageNamed:@"mine_arrow_right_black"] title:@""];
+        model.inputPredicate = FormVerifyOnlyNumber;
+        model.textFLeftMargin = FormCellLRMargin;
+        model.alignment = NSTextAlignmentLeft;
+        [self.dataSource addObject:model];
+    }
+    {
         FormListTextModel *model = [FormListTextModel modelWithPlaceholder:@"请选择" keyboardType:UIKeyboardTypeDefault hasRight:YES righrContent:[UIImage imageNamed:@"mine_arrow_right_black"] title:@"选择"];
         model.isSelect = YES;
         [model setSelectBlock:^(id  _Nonnull tftv, FormListTextModel * _Nonnull model) {
@@ -144,6 +222,10 @@
         FormListSelectModel *model = [FormListSelectModel modelWithTitle:@"单选类型"];
         model.selects = @[@"选择1", @"选择2"];
         model.submitKey = @"select";
+        model.selectIndex = 1;
+        [model setSelectClick:^(NSInteger * _Nonnull index, UIButton * _Nonnull btn) {
+            
+        }];
         [self.dataSource addObject:model];
     }
     

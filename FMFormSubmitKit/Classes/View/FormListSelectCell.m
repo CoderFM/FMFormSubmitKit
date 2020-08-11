@@ -10,7 +10,7 @@
 #import "FormListSelectModel.h"
 
 @interface FormListSelectCell ()
-
+@property(nonatomic, strong)NSArray *titles;
 @end
 
 @implementation FormListSelectCell
@@ -33,6 +33,9 @@
     self.selectBtn = sender;
     FormListSelectModel *selModel = (FormListSelectModel *)self.model;
     selModel.selectIndex = sender.tag;
+    if (selModel.selectClick) {
+        selModel.selectClick(sender.tag, sender);
+    }
 }
 
 - (void)setSelectBtn:(UIButton *)selectBtn{
@@ -43,7 +46,16 @@
 
 - (void)setModel:(FormListSelectModel *)model{
     [super setModel:model];
-    [self createBtns:model.selects selectIndex:model.selectIndex];
+    self.titles = model.selects;
+}
+
+- (void)setTitles:(NSArray *)titles{
+    if ([_titles isEqualToArray:titles]) {
+        return;
+    } else {
+        _titles = titles;
+        [self createBtns:titles selectIndex:((FormListSelectModel *)self.model).selectIndex];
+    }
 }
 
 - (void)createBtns:(NSArray *)titles selectIndex:(NSInteger)select{
@@ -52,7 +64,7 @@
         [obj removeFromSuperview];
     }];
     
-    id left = self.contentView.mas_right;
+    id left = self.btnView.mas_right;
     
     for (int i = 0; i<titles.count; i++) {
         NSInteger index = titles.count - 1 - i;
