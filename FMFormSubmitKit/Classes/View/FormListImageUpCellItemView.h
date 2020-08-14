@@ -9,12 +9,13 @@
 
 NS_ASSUME_NONNULL_BEGIN
 @class FormListImageSelectModel;
-typedef void(^FormListImageUpCellItemClick)(BOOL add, FormListImageSelectModel *model);
+///是否是添加图片, 点击的model, 添加时选中的所有图片
+typedef void(^FormListImageUpCellItemMutibleClick)(BOOL add, FormListImageSelectModel *model, NSArray * __nullable images);
 
 @protocol FormListImageUpCellItemDelegate <NSObject>
 
 @property(nonatomic, strong)FormListImageSelectModel *model;
-@property(nonatomic, copy)FormListImageUpCellItemClick clickBlock;
+@property(nonatomic, copy)FormListImageUpCellItemMutibleClick clickMutibleBlock;
 
 @end
 

@@ -44,7 +44,7 @@
     [self.btnContentView.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         [obj removeFromSuperview];
     }];
-    if (model.oneLineScroll) {
+    if (model.imageConfigure.oneLineScroll) {
         CGFloat width = model.imageConfigure.inset.left + model.images.count * model.imageConfigure.imageWidth + (model.images.count - 1) * model.imageConfigure.imageItemSpace + model.imageConfigure.inset.right;
         self.btnContentView.contentSize = CGSizeMake(width, 0);
         [model.imageConfigure oneLineScrollMasonyMake];
@@ -64,7 +64,7 @@
         FormListImageUpCellItemView *view = [[model.imageConfigure.imageViewClass alloc] init];
         view.model = btnModel;
         __weak typeof(self) weakSelf = self;
-        [view setClickBlock:^(BOOL add, FormListImageSelectModel *model) {
+        [view setClickMutibleBlock:^(BOOL add, FormListImageSelectModel * _Nonnull model, NSArray * _Nonnull images) {
             FormListImageUpModel *upModel = (FormListImageUpModel *)weakSelf.model;
             if (upModel.canDynamicAdd) {
                 NSInteger index = [upModel.images indexOfObject:model];
@@ -72,15 +72,28 @@
                     if (upModel.images.count < upModel.maxCount) {// 可以再添加
                         if (index == upModel.images.count - 1) {
                             NSMutableArray *arrm = [NSMutableArray arrayWithArray:upModel.images];
-                            [arrm addObject:upModel.imageConfigure.createAddModel()];
+                            if (images.count > 1) {
+                                NSInteger count = MIN(images.count - 1, upModel.maxCount - upModel.images.count);
+                                for (int i = 0; i < count; i++) {
+                                    FormListImageSelectModel *selModel = upModel.imageConfigure.createAddModel();
+                                    selModel.image = images[i+1];
+                                    [arrm addObject:selModel];
+                                }
+                            }
+                            if (arrm.count < upModel.maxCount) {
+                                [arrm addObject:upModel.imageConfigure.createAddModel()];
+                            }
                             upModel.images = [NSArray arrayWithArray:arrm];
-                            if (upModel.oneLineScroll) {
+                            if (upModel.imageConfigure.oneLineScroll) {
                                 weakSelf.scrollToLast = YES;
                             }
                         }
                     }
                     if (upModel.selectImageBlock) {
                         upModel.selectImageBlock(model, model.image);
+                    }
+                    if (upModel.selectMutibleBlock) {
+                        upModel.selectMutibleBlock(model, images);
                     }
                 } else {
                     NSMutableArray *arrm = [NSMutableArray arrayWithArray:upModel.images];

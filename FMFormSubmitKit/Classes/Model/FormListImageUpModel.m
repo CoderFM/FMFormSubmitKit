@@ -41,7 +41,7 @@
 }
 
 - (CGFloat)interiorHeight{
-    if (self.oneLineScroll) {
+    if (self.imageConfigure.oneLineScroll) {
         _interiorHeight = self.imageConfigure.inset.top + self.imageConfigure.imageHeight + self.imageConfigure.inset.bottom;
         return _interiorHeight;
     } else {

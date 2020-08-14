@@ -290,7 +290,7 @@
         model.images = [@[selModel, selModel1, selModel2, selModel3, ] mutableCopy];
         model.imageConfigure = [[FormListUpImageConfigure defaultConfigure] copy];
         model.imageConfigure.imageViewClass = [FMUpImageItemView class];
-        model.oneLineScroll = YES;
+        model.imageConfigure.oneLineScroll = YES;
         model.canDynamicAdd = YES;
         model.maxCount = 8;
         model.submitKey = @"image[]";

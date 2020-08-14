@@ -6,10 +6,11 @@
 //
 
 #import "FormListImageUpCellItemView.h"
+#import "FormListImageSelectModel.h"
 
 @implementation FormListImageUpCellItemView{
     FormListImageSelectModel *_model;
-    FormListImageUpCellItemClick _clickBlock;
+    FormListImageUpCellItemMutibleClick _clickMutibleBlock;
 }
 
 - (instancetype)initWithFrame:(CGRect)frame
@@ -29,20 +30,20 @@
     return _model;
 }
 
-- (void)setClickBlock:(FormListImageUpCellItemClick)clickBlock{
-    _clickBlock = clickBlock;
+- (void)setClickMutibleBlock:(FormListImageUpCellItemMutibleClick)clickMutibleBlock{
+    _clickMutibleBlock = clickMutibleBlock;
 }
 
-- (FormListImageUpCellItemClick)clickBlock{
-    return _clickBlock;
+- (FormListImageUpCellItemMutibleClick)clickMutibleBlock{
+    return _clickMutibleBlock;
 }
 
 - (void)delButtonClick{
-    !self.clickBlock ?: self.clickBlock(NO, self.model);
+    !self.clickMutibleBlock ?: self.clickMutibleBlock(NO, self.model, nil);
 }
 
 - (void)addImageClick{
-    !self.clickBlock ?: self.clickBlock(YES, self.model);
+    !self.clickMutibleBlock ?: self.clickMutibleBlock(YES, self.model, @[[[UIImage alloc] init], [[UIImage alloc] init], [[UIImage alloc] init]]);
 }
 
 @end
