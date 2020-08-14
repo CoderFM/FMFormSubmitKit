@@ -118,6 +118,14 @@
             }
             !upModel.refreshBlock ?: upModel.refreshBlock();
         }];
+        [view setSelectMaxCount:^NSInteger(FormListImageSelectModel * _Nonnull model) {
+            FormListImageUpModel *upModel = (FormListImageUpModel *)weakSelf.model;
+            if (upModel.canDynamicAdd) {
+                return upModel.maxCount - upModel.images.count + 1;
+            } else {
+                return 1;
+            }
+        }];
         [self.btnContentView addSubview:view];
         [view mas_makeConstraints:^(MASConstraintMaker *make) {
             model.imageConfigure.masony_makeBlock(make, i);

@@ -11,6 +11,7 @@
 @implementation FormListImageUpCellItemView{
     FormListImageSelectModel *_model;
     FormListImageUpCellItemMutibleClick _clickMutibleBlock;
+    FormListImageUpCanSelectMaxCount _selectMaxBlock;
 }
 
 - (instancetype)initWithFrame:(CGRect)frame
@@ -38,11 +39,21 @@
     return _clickMutibleBlock;
 }
 
+- (void)setSelectMaxCount:(FormListImageUpCanSelectMaxCount)selectMaxCount{
+    _selectMaxBlock = selectMaxCount;
+}
+
+- (FormListImageUpCanSelectMaxCount)selectMaxCount{
+    return _selectMaxBlock;
+}
+
 - (void)delButtonClick{
     !self.clickMutibleBlock ?: self.clickMutibleBlock(NO, self.model, nil);
 }
 
 - (void)addImageClick{
+    NSInteger maxCount = self.selectMaxCount?self.selectMaxCount(self.model):1;
+    NSLog(@"maxCount: %ld", maxCount);
     !self.clickMutibleBlock ?: self.clickMutibleBlock(YES, self.model, @[[[UIImage alloc] init], [[UIImage alloc] init], [[UIImage alloc] init]]);
 }
 
