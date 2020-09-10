@@ -12,10 +12,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface FormListTextModel : FormListTitleModel
 
-
-@property(nonatomic, copy)NSString *placehoder;
-@property(nonatomic, copy)NSString *text;
-@property(nonatomic, copy)NSString *value;
+///NSString  NSAttributeString
+@property(nonatomic, copy)id placehoder;
+///NSString  NSAttributeString
+@property(nonatomic, copy)id text;
+///存储一些值
+@property(nonatomic, copy)id value;
 @property(nonatomic, assign)UIKeyboardType keyboardType;
 @property(nonatomic, assign)BOOL hasRight;
 ///支持UIImage  NSString NSAttributeString
@@ -40,18 +42,18 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, copy)NSString *inputPredicate;
 @property(nonatomic, assign)NSInteger limitCount;
 
-@property(nonatomic, copy)BOOL(^verifyBlock)(NSString *text);
+@property(nonatomic, copy)BOOL(^verifyBlock)(id text);
 
 @property(nonatomic, copy)void(^selectBlock)(id tftv, FormListTextModel *model);
 @property(nonatomic, copy)void(^configurationBlock)(id tftv);
 
 @property(nonatomic, copy)void(^textLengthChange)(NSInteger length);
 
-+ (instancetype)modelWithPlaceholder:(NSString *)placeholder keyboardType:(UIKeyboardType)type hasRight:(BOOL)hasRight righrContent:(id _Nullable)rightContent title:(NSString *)title;
++ (instancetype)modelWithPlaceholder:(id)placeholder keyboardType:(UIKeyboardType)type hasRight:(BOOL)hasRight righrContent:(id _Nullable)rightContent title:(id)title;
 
-+ (instancetype)modelWithTVPlaceholder:(NSString *)placeholder title:(NSString *)title;
++ (instancetype)modelWithTVPlaceholder:(id)placeholder title:(id)title;
 
-+ (instancetype)modelShowWithTitle:(NSString *)title text:(NSString *)text aligment:(NSTextAlignment)aligment textFLeftMargin:(CGFloat)textFLeftMargin;
++ (instancetype)modelShowWithTitle:(id)title text:(id)text aligment:(NSTextAlignment)aligment textFLeftMargin:(CGFloat)textFLeftMargin;
 
 - (void)reloadTVHeight;
 

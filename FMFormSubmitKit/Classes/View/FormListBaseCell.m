@@ -9,6 +9,8 @@
 #import "FormListBaseCell.h"
 #import "FormListBaseModel.h"
 
+NSInteger initCount = 0;
+
 @implementation FormListBaseCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
@@ -25,6 +27,8 @@
             make.height.mas_equalTo(FormCellBottomLineDefaultHeight);
         }];
         self.bottomLineView = line;
+        initCount += 1;
+        NSLog(@"initCount: %ld", initCount);
     }
     return self;
 }

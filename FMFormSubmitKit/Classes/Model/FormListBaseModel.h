@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface FormListBaseModel : NSObject
 @property(nonatomic, assign)CGFloat cellHeight;
 @property(nonatomic, copy)NSString *reuseKey;
+@property(nonatomic, assign)BOOL isOnlyOne;
 @property(nonatomic, copy)NSString *cellClassName;
 @property(nonatomic, assign)BOOL cellIsNib;
 @property(nonatomic, assign)CGFloat bottomLineHeight;

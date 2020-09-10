@@ -54,9 +54,7 @@
     self.textV.placeholderLabel.textColor = model.placeholderColor;
     self.textV.font = model.textFont;
     self.textV.textColor = model.textColor;
-    self.textV.placeholder = model.placehoder;
     self.textV.textAlignment = model.alignment;
-    self.textV.text = model.text;
     self.textV.tintColor = model.textTintColor;
     if (model.textVTopMargin > 0) {
         [self.textV mas_updateConstraints:^(MASConstraintMaker *make) {
@@ -72,6 +70,19 @@
             make.left.mas_equalTo(model.textFLeftMargin - 8);
         }];
     }
+    
+    if ([model.placehoder isKindOfClass:[NSString class]]) {
+        self.textV.placeholder = model.placehoder;
+    } else if ([model.placehoder isKindOfClass:[NSAttributedString class]]) {
+        self.textV.attributedPlaceholder = model.placehoder;
+    }
+    
+    if ([model.text isKindOfClass:[NSString class]]) {
+        self.textV.text = model.text;
+    } else if ([model.text isKindOfClass:[NSAttributedString class]]) {
+        self.textV.attributedText = model.text;
+    }
+    
     if (model.configurationBlock) {
         model.configurationBlock(self.textV);
     }

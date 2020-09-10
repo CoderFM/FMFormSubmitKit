@@ -12,7 +12,11 @@
 
 - (NSString *)reuseKey{
     if (_reuseKey == nil) {
-        _reuseKey = self.cellClassName;
+        if (self.isOnlyOne) {
+            _reuseKey = [NSString stringWithFormat:@"%p%@", self, self.cellClassName];
+        } else {
+            _reuseKey = [NSString stringWithFormat:@"%@", self.cellClassName];
+        }
     }
     return _reuseKey;
 }

@@ -89,8 +89,8 @@
     if (indexPath.row < self.models.count) {
         FormListBaseModel *model = self.models[indexPath.row];
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:model.reuseKey];
-        if ([cell respondsToSelector:@selector(setModel:)]) {
-            [cell performSelector:@selector(setModel:) withObject:model];
+        if ([cell isKindOfClass:[FormListBaseCell class]]) {
+            [(FormListBaseCell *)cell setModel:model];
         }
         return cell;
     }

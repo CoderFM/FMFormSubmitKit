@@ -137,6 +137,7 @@
     {
         FormListTextModel *model = [FormListTextModel modelWithPlaceholder:@"请输入" keyboardType:UIKeyboardTypeDefault hasRight:YES righrContent:@"元" title:@"文本输入"];
         model.submitKey = @"money";
+        model.text = [[NSAttributedString alloc] initWithString:@"富文本Text" attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:20], NSForegroundColorAttributeName:[UIColor blueColor]}];
         [self.dataSource addObject:model];
     }
     {
@@ -157,7 +158,8 @@
         model.alignment = NSTextAlignmentLeft;
         model.inputPredicate = FormVerifyOnlyChinese;
         model.limitCount = 10;
-        model.placeholderColor = [UIColor orangeColor];
+//        model.placeholderColor = [UIColor orangeColor];
+        model.placehoder = [[NSAttributedString alloc] initWithString:@"请输入(不支持emoji" attributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:20]}];
         [self.dataSource addObject:model];
     }
     {
