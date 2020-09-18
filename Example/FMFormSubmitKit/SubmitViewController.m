@@ -225,7 +225,7 @@
         model.selects = @[@"选择1", @"选择2"];
         model.submitKey = @"select";
         model.selectIndex = 1;
-        [model setSelectClick:^(NSInteger * _Nonnull index, UIButton * _Nonnull btn) {
+        [model setSelectClick:^(NSInteger index, UIButton * _Nonnull btn) {
             
         }];
         [self.dataSource addObject:model];
