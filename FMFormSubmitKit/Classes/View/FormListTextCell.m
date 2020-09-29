@@ -84,12 +84,16 @@
         self.textF.placeholderLabel.textColor = model.placeholderColor;
     } else if ([model.placehoder isKindOfClass:[NSAttributedString class]]) {
         self.textF.attributedPlaceholder = model.placehoder;
+    } else {
+        self.textF.placeholder = @"";
     }
     
     if ([model.text isKindOfClass:[NSString class]]) {
         self.textF.text = model.text;
     } else if ([model.text isKindOfClass:[NSAttributedString class]]) {
         self.textF.attributedText = model.text;
+    } else {
+        self.textF.text = @"";
     }
     
     if (model.hasRight && model.rightC) {
@@ -134,7 +138,7 @@
     } else {
         self.textF.rightView = nil;
     }
-    !model.configurationBlock ? : model.configurationBlock(self.textF);
+    
     if (model.eyeEnable) {
         self.eyeBtn.hidden = NO;
         self.textF.secureTextEntry = model.isSecret;
@@ -143,6 +147,7 @@
         self.textF.secureTextEntry = NO;
     }
  
+    !model.configurationBlock ? : model.configurationBlock(self.textF);
 }
 
 - (void)textFieldRightViewTap{

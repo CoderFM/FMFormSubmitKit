@@ -75,12 +75,16 @@
         self.textV.placeholder = model.placehoder;
     } else if ([model.placehoder isKindOfClass:[NSAttributedString class]]) {
         self.textV.attributedPlaceholder = model.placehoder;
+    } else {
+        self.textV.placeholder = @"";
     }
     
     if ([model.text isKindOfClass:[NSString class]]) {
         self.textV.text = model.text;
     } else if ([model.text isKindOfClass:[NSAttributedString class]]) {
         self.textV.attributedText = model.text;
+    } else {
+        self.textV.text = @"";
     }
     
     if (model.configurationBlock) {
