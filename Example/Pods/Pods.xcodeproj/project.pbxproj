@@ -73,6 +73,8 @@
 		C34B80B2244AE9990030C3D0 /* FormListImageUpCellItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = C34B80B0244AE9990030C3D0 /* FormListImageUpCellItemView.m */; };
 		C39F5639246A897C0085A568 /* NSString+FormEmoji.h in Headers */ = {isa = PBXBuildFile; fileRef = C39F5637246A897C0085A568 /* NSString+FormEmoji.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C39F563A246A897C0085A568 /* NSString+FormEmoji.m in Sources */ = {isa = PBXBuildFile; fileRef = C39F5638246A897C0085A568 /* NSString+FormEmoji.m */; };
+		C3B021A225F7B750000DB420 /* FormListHandle.h in Headers */ = {isa = PBXBuildFile; fileRef = C3B021A025F7B750000DB420 /* FormListHandle.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C3B021A325F7B750000DB420 /* FormListHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B021A125F7B750000DB420 /* FormListHandle.m */; };
 		C4AECC88660F0B32C115A4F28CB215ED /* FormListImageSelectModel.h in Headers */ = {isa = PBXBuildFile; fileRef = A39CEC44A489457047575BD98B9ECFDD /* FormListImageSelectModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C95CE9DDDB329D88AE6F0CCEFA2D55D1 /* View+MASShorthandAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 86765B456E483806C4E13D2DD50E40A4 /* View+MASShorthandAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D0852FD6368E7AD5A1766C258E538C6E /* Pods-FMFormSubmitKit_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2902988B072F38A1133231FFD10FCBE0 /* Pods-FMFormSubmitKit_Tests-dummy.m */; };
@@ -222,6 +224,8 @@
 		C34B80B0244AE9990030C3D0 /* FormListImageUpCellItemView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FormListImageUpCellItemView.m; sourceTree = "<group>"; };
 		C39F5637246A897C0085A568 /* NSString+FormEmoji.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+FormEmoji.h"; sourceTree = "<group>"; };
 		C39F5638246A897C0085A568 /* NSString+FormEmoji.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+FormEmoji.m"; sourceTree = "<group>"; };
+		C3B021A025F7B750000DB420 /* FormListHandle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = FormListHandle.h; path = FMFormSubmitKit/Classes/FormListHandle.h; sourceTree = "<group>"; };
+		C3B021A125F7B750000DB420 /* FormListHandle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = FormListHandle.m; path = FMFormSubmitKit/Classes/FormListHandle.m; sourceTree = "<group>"; };
 		C626BE1CFB347BBECFBCEC4AFFF78CA2 /* FormListTitleCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FormListTitleCell.h; sourceTree = "<group>"; };
 		C663FFE10CAF881BAF1E421A00809D07 /* Pods-FMFormSubmitKit_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-FMFormSubmitKit_Tests-umbrella.h"; sourceTree = "<group>"; };
 		C7665E65121335CCA04F09F6354531FA /* FormListTextVCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = FormListTextVCell.m; sourceTree = "<group>"; };
@@ -468,6 +472,8 @@
 				C34B80AB244ADBA70030C3D0 /* FormListUpImageConfigure.m */,
 				B4FD8C1C443FF174F613EC2B50A723A5 /* FormListSubmitView.h */,
 				8C7656EA9DC728B27A9499DCA8B6B2A9 /* FormListSubmitView.m */,
+				C3B021A025F7B750000DB420 /* FormListHandle.h */,
+				C3B021A125F7B750000DB420 /* FormListHandle.m */,
 				569B4B33CD188F64CB24D16CA5FBEC5C /* Model */,
 				0F4DAAEA5CAB5DB0B15A17132C95C874 /* Pod */,
 				9152FDD49285E3C5A8590C123A3457B0 /* Support Files */,
@@ -602,6 +608,7 @@
 				8FB0E53A41E0596E45F3E50D3AA87E09 /* FormListTitleModel.h in Headers */,
 				EA5759D0A24E8F176E0907E291CB432E /* FormTextView.h in Headers */,
 				1AA6B9DC79C13E1A83C06A941BDBDE75 /* FormVerifyManager.h in Headers */,
+				C3B021A225F7B750000DB420 /* FormListHandle.h in Headers */,
 				09276FEFDA9F4F5A0A7C4170E7EE63A9 /* UITextField+FormExtension.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -773,6 +780,7 @@
 				E19E15160A630E74107A54EA0F80D378 /* FormListSelectModel.m in Sources */,
 				93CA0379BCADC17EDD48F0B4FC50DDBE /* FormListSubmitView.m in Sources */,
 				A4FB1F170E0AB1DCBF7BD37299290866 /* FormListTextCell.m in Sources */,
+				C3B021A325F7B750000DB420 /* FormListHandle.m in Sources */,
 				42B590F711198D88FC6E817849832AAF /* FormListTextModel.m in Sources */,
 				49B52DD8D912B8B535F28EB0CA0521E6 /* FormListTextVCell.m in Sources */,
 				0360631F5EAA5B4919E283EDDE3F885F /* FormListTitleCell.m in Sources */,

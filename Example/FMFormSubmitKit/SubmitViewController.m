@@ -32,16 +32,45 @@
     
     [FormListCellConfigure defaultConfigure].inputDecimalCount = 4;
     
+    self.tableView.backgroundColor = UIColor.redColor;
+    self.tableView.handle.cardCornerReadus = 10.0;
+    self.tableView.handle.sectionMargin = 10.0;
     //    [self addData];
 }
 
 - (void)submitClick{
-    NSLog(@"%@", self.tableView.submitParam);
+    NSLog(@"%@", self.tableView.handle.submitParam);
     //    AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
     AudioServicesPlaySystemSound(1519);
 }
 
 - (void)addData{
+    NSMutableArray *arrM = [NSMutableArray array];
+    {
+        FormListTextModel *model = [FormListTextModel modelWithPlaceholder:@"请输入" keyboardType:UIKeyboardTypeDefault hasRight:YES righrContent:@"元" title:@"文本输入"];
+        model.submitKey = @"money";
+        [self.dataSource addObject:model];
+    }
+    {
+        FormListTextModel *model = [FormListTextModel modelWithPlaceholder:@"请输入" keyboardType:UIKeyboardTypeDefault hasRight:NO righrContent:nil title:@"文本输入"];
+        model.alignment = NSTextAlignmentLeft;
+        model.submitKey = @"text";
+        [self.dataSource addObject:model];
+    }
+    {
+        FormListTextModel *model = [FormListTextModel modelWithPlaceholder:@"请输入(支持emoji表情输入)" keyboardType:UIKeyboardTypeDefault hasRight:NO righrContent:nil title:@""];
+        model.textFLeftMargin = FormCellLRMargin;
+        model.textTintColor = [UIColor redColor];
+        [self.dataSource addObject:model];
+    }
+    [arrM addObject:self.dataSource];
+    [arrM addObject:self.dataSource];
+    [arrM addObject:self.dataSource];
+    self.tableView.handle.groupModels = arrM;
+    [self.tableView reloadData];
+}
+
+- (void)addData1{
     {
         FormListBaseModel *model = [FormListBaseModel modelWithCellHeight:5 bottomLineHeight:5 bottomLineLRMargin:0];
         [self.dataSource addObject:model];

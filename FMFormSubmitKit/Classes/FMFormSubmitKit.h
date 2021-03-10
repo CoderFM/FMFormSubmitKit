@@ -16,6 +16,7 @@
 #import "FormListImageSelectModel.h"
 
 #import "FormListSubmitView.h"
+#import "FormListHandle.h"
 
 #import "FormVerifyManager.h"
 #import "UITextField+FormExtension.h"

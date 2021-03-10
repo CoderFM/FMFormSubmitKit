@@ -20,11 +20,11 @@
 
 - (NSMutableArray *)dataSource
 {
-    return self.tableView.models;
+    return self.tableView.handle.models;
 }
 
 - (void)setDataSource:(NSMutableArray<FormListBaseModel *> *)dataSource{
-    self.tableView.models = dataSource;
+    self.tableView.handle.models = dataSource;
 }
 
 - (FormListSubmitView *)tableView{
@@ -55,10 +55,10 @@
 }
 
 - (BOOL)verifyDataSource{
-    return [self.tableView verifyDataSource];
+    return [self.tableView.handle verifyDataSource];
 }
 - (BOOL)verifyDataSource:(BOOL)alert{
-    return [self.tableView verifyDataSource:alert];
+    return [self.tableView.handle verifyDataSource:alert];
 }
 
 @end
