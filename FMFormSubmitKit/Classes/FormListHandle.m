@@ -119,7 +119,6 @@
             model = arrM[indexPath.row];
         }
     }
-    
     //圆率
     CGFloat cornerRadius = 10.0;
     //大小
@@ -151,13 +150,7 @@
     //图层填充色，也就是cell的底色
     layer.fillColor = (model.contentBg ?: [UIColor whiteColor]).CGColor;
     //图层边框线条颜色
-    /*
-     如果self.tableView.style = UITableViewStyleGrouped时，每一组的首尾都会有一根分割线，目前我还没找到去掉每组首尾分割线，保留cell分割线的办法。
-     所以这里取巧，用带颜色的图层边框替代分割线。
-     这里为了美观，最好设为和tableView的底色一致。
-     设为透明，好像不起作用。
-     */
-    layer.strokeColor = [UIColor grayColor].CGColor;
+    layer.strokeColor = (model.contentBg ?: [UIColor whiteColor]).CGColor;
     //将图层添加到cell的图层中，并插到最底层
     NSMutableArray *removeArr = [NSMutableArray array];
     for (CAShapeLayer *layerItem in [cell.layer sublayers]) {
